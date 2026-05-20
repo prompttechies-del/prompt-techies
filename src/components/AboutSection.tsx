@@ -27,7 +27,9 @@ export default function AboutSection() {
               Learn More
             </Link>
             <Link 
-              href="https://platform.prompttechies.in" 
+              href="https://www.instagram.com/prompt_techies" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-3 bg-[#004bff] text-white rounded-full text-sm font-bold hover:bg-[#003cb3] transition-all shadow-md shadow-[#004bff]/20"
             >
               Get Started

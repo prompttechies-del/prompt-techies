@@ -23,7 +23,9 @@ export default function InstitutionsPage() {
           </p>
           <div className="flex items-center gap-4">
             <Link 
-              href="https://platform.prompttechies.in" 
+              href="https://www.instagram.com/prompt_techies" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-[#004bff] text-white rounded-full font-bold text-sm hover:bg-[#003cb3] transition-all shadow-lg"
             >
               Get Started

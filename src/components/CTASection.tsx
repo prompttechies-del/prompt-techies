@@ -13,7 +13,9 @@ export default function CTASection() {
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <Link 
-            href="https://platform.prompttechies.in" 
+            href="https://www.instagram.com/prompt_techies" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-12 py-5 bg-white text-[#004bff] rounded-full text-sm font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
           >
             Get Started Now

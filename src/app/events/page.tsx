@@ -78,7 +78,9 @@ export default function EventsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Link
-                  href="https://platform.prompttechies.in"
+                  href="https://www.instagram.com/prompt_techies"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-10 py-5 bg-gradient-to-br from-[#004bff] to-[#002e99] text-white rounded-full font-bold text-base shadow-xl shadow-[#004bff]/20 hover:scale-105 transition-transform text-center border border-white/10"
                 >
                   Stay Notified
@@ -158,7 +160,9 @@ export default function EventsPage() {
             </p>
           </div>
           <Link
-            href="https://platform.prompttechies.in"
+            href="https://www.instagram.com/prompt_techies"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-12 py-6 bg-gradient-to-br from-[#004bff] to-[#002e99] text-white border border-white/10 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-[#004bff]/10 whitespace-nowrap"
           >
             Start Hosting

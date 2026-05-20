@@ -59,7 +59,9 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4">
             <Link 
-              href="https://platform.prompttechies.in" 
+              href="https://www.instagram.com/prompt_techies" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={`
                 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
                 ${scrolled 
