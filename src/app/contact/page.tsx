@@ -48,7 +48,7 @@ export default function ContactPage() {
           
           <div className="w-full h-[1100px] bg-[#121212] rounded-[32px] overflow-hidden flex justify-center border border-gray-800 shadow-2xl">
             <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSexG7oXTb4FzfStG3I-AdaNwlBZmr4pPQCsZZHK3lfrUupGgg/viewform?embedded=true" 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSc4RPfPEvGjolYCNAGJhYGxdC_ktLlA8pu3mqfFFXiYL7qSOQ/viewform?embedded=true" 
               width="100%" 
               height="1096" 
               frameBorder="0" 
