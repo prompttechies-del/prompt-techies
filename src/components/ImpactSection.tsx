@@ -66,13 +66,19 @@ const WordsPullUpMultiStyle = ({ segments = [] }: { segments: { text: string; cl
 };
 
 export default function ImpactSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const cardAnimation = (index: number) => ({
-    initial: { scale: 0.95, opacity: 0 },
-    whileInView: { scale: 1, opacity: 1 },
-    viewport: { once: true, margin: '-50px' },
+    initial: isMobile ? { y: 15, opacity: 0 } : { scale: 0.95, opacity: 0 },
+    whileInView: isMobile ? { y: 0, opacity: 1 } : { scale: 1, opacity: 1 },
+    viewport: { once: true, margin: isMobile ? '-10px' : '-50px' },
     transition: {
-      duration: 0.7,
-      delay: index * 0.12,
+      duration: isMobile ? 0.55 : 0.7,
+      delay: isMobile ? index * 0.04 : index * 0.12,
       ease: [0.22, 1, 0.36, 1] as const,
     },
   });
@@ -135,10 +141,10 @@ export default function ImpactSection() {
 
       {/* Fullscreen Cinematic Background Video Layer with scroll fade-and-scale */}
       <motion.div 
-        initial={{ scale: 1.06, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 0.65 }}
+        initial={isMobile ? { opacity: 0 } : { scale: 1.06, opacity: 0 }}
+        whileInView={isMobile ? { opacity: 0.65 } : { scale: 1, opacity: 0.65 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] as const }}
+        transition={{ duration: isMobile ? 0.8 : 1.6, ease: [0.16, 1, 0.3, 1] as const }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
         <video

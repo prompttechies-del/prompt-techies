@@ -138,6 +138,10 @@ export default function Footer() {
         })
         .catch((error) => {
           console.warn("Autoplay was prevented, waiting for interaction.", error);
+          // Standard low power mode fallback: show the poster image by making the video container visible
+          if (videoRef.current) {
+            videoRef.current.style.opacity = "0.45";
+          }
         });
     }
 
@@ -199,6 +203,7 @@ export default function Footer() {
         autoPlay
         playsInline
         preload="auto"
+        poster="/featured_bg.png"
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_115001_bcdaa3b4-03de-47e7-ad63-ae3e392c32d4.mp4"

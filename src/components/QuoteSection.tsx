@@ -1,16 +1,22 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 
 export default function QuoteSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const cardAnimation = (index: number) => ({
-    initial: { scale: 0.95, opacity: 0 },
-    whileInView: { scale: 1, opacity: 1 },
-    viewport: { once: true, margin: '-50px' },
+    initial: isMobile ? { y: 15, opacity: 0 } : { scale: 0.95, opacity: 0 },
+    whileInView: isMobile ? { y: 0, opacity: 1 } : { scale: 1, opacity: 1 },
+    viewport: { once: true, margin: isMobile ? '-10px' : '-50px' },
     transition: {
-      duration: 0.7,
-      delay: index * 0.12,
+      duration: isMobile ? 0.55 : 0.7,
+      delay: isMobile ? index * 0.04 : index * 0.12,
       ease: [0.22, 1, 0.36, 1] as const,
     },
   });

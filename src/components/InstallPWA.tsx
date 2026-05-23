@@ -57,7 +57,7 @@ export default function InstallPWA({ scrolled }: { scrolled?: boolean }) {
       onClick={handleInstallClick}
       className={`
         flex items-center gap-2 rounded-full font-bold uppercase tracking-wider transition-all whitespace-nowrap 
-        bg-transparent text-[#00c8ff] border border-[#00c8ff]/50 hover:bg-[#00c8ff]/10 shadow-[0_0_10px_rgba(0,200,255,0.2)] hover:shadow-[0_0_15px_rgba(0,200,255,0.4)]
+        bg-[#004bff] text-white hover:bg-[#003cb3] border border-transparent shadow-md shadow-[#004bff]/20
         ${scrolled ? 'px-3 py-1.5 text-[10px]' : 'px-4 py-2 text-[10px]'}
       `}
     >
