@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Globe, ArrowRight } from "lucide-react";
+import InstallPWA from "./InstallPWA";
 
 // Custom SVG definitions for social brand icons because lucide-react lacks them
 const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -197,10 +198,11 @@ export default function Footer() {
         muted
         autoPlay
         playsInline
+        preload="auto"
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_115001_bcdaa3b4-03de-47e7-ad63-ae3e392c32d4.mp4"
-        className="absolute inset-0 w-full h-full object-cover translate-y-[17%] pointer-events-none z-0"
+        className="absolute inset-0 w-full h-full object-cover translate-y-[17%] pointer-events-none z-0 transform-gpu will-change-transform"
         style={{ opacity: 0 }}
       />
 
@@ -222,7 +224,7 @@ export default function Footer() {
 
           {/* Heading */}
           <h2 
-            className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 select-none font-normal pb-2"
+            className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 select-none font-normal pb-2"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Dream Bigger. Build Faster. Lead What's Next.
@@ -380,8 +382,9 @@ export default function Footer() {
           </div>
 
           {/* Right Tagline */}
-          <div className="text-[10px] text-white/40 font-mono tracking-wider select-none">
-            skills &gt; credentials
+          <div className="flex items-center gap-4 text-[10px] text-white/40 font-mono tracking-wider select-none">
+            <InstallPWA scrolled={true} />
+            <span>skills &gt; credentials</span>
           </div>
         </div>
       </div>

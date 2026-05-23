@@ -2,97 +2,305 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Users, BookOpen, Layers, Award } from 'lucide-react';
 
 function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
-  const countRef = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const hasStarted = useRef(false);
 
   useEffect(() => {
-    let startTime: number | null = null;
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    requestAnimationFrame(animate);
-  }, [end, duration]);
+    if (isInView && !hasStarted.current) {
+      hasStarted.current = true;
+      let startTime: number | null = null;
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        setCount(Math.floor(progress * end));
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [isInView, end, duration]);
 
-  return <>{count.toLocaleString()}{suffix}</>;
+  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
-export default function ImpactSection() {
+const WordsPullUpMultiStyle = ({ segments = [] }: { segments: { text: string; className: string }[] }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const allWords: { word: string; className: string }[] = [];
+  segments.forEach((segment) => {
+    const words = segment.text.split(' ');
+    words.forEach((word) => {
+      if (word.trim() !== '') {
+        allWords.push({ word, className: segment.className });
+      }
+    });
+  });
+
   return (
-    <section className="w-full bg-[#0a0a0a] py-24 px-8 flex flex-col items-center">
-      {/* Header */}
-      <div className="flex flex-col items-center text-center mb-16 max-w-4xl">
-        <div className="bg-[#004bff]/10 text-[#004bff] border border-[#004bff]/20 px-6 py-1 rounded-full text-[10px] font-bold mb-6 uppercase tracking-wider">
-          Prompt Techies Impact
-        </div>
-        <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
-          Making a Difference in the Student Community
-        </h2>
-        <p className="text-lg font-normal text-gray-400 leading-relaxed">
-          At Prompt Techies, we are dedicated to making a positive impact in the community through various programs and initiatives.
-        </p>
-      </div>
+    <div ref={ref} className="flex flex-wrap justify-center text-center gap-y-2">
+      {allWords.map((item, index) => (
+        <motion.span
+          key={index}
+          initial={{ y: 20, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: index * 0.05,
+            ease: [0.16, 1, 0.3, 1] as const,
+          }}
+          className={`inline-block mx-1.5 ${item.className}`}
+        >
+          {item.word}
+        </motion.span>
+      ))}
+    </div>
+  );
+};
 
-      {/* Grid Layout */}
-      <div className="w-full max-w-[1600px] grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Row 1, Box 1 - Electric Blue Gradient Metric */}
-        <div className="lg:col-span-1 bg-gradient-to-br from-[#004bff] to-[#002e99] rounded-[32px] p-10 flex flex-col items-start justify-start text-white shadow-xl shadow-[#004bff]/10 border border-white/10">
-          <span className="text-7xl font-bold mb-8 text-white">
-            <Counter end={5000} suffix="+" />
-          </span>
-          <h3 className="text-xl font-bold mb-4 text-white">Students Reached Online</h3>
-          <p className="text-sm font-normal text-white/80 leading-relaxed">
-            In 2025, our online initiatives reached over 5000 individuals with precise, accessible, and compelling information.
-          </p>
+export default function ImpactSection() {
+  const cardAnimation = (index: number) => ({
+    initial: { scale: 0.95, opacity: 0 },
+    whileInView: { scale: 1, opacity: 1 },
+    viewport: { once: true, margin: '-50px' },
+    transition: {
+      duration: 0.7,
+      delay: index * 0.12,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  });
+
+  return (
+    <section className="prisma-impact relative w-full bg-[#000000] py-28 px-4 md:px-8 flex flex-col items-center overflow-hidden">
+      {/* Localized Stylesheet for Fonts & Prisma Utilities */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+        .prisma-impact {
+          --font-display: 'Instrument Serif', serif;
+          --font-body: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-family: var(--font-body);
+        }
+
+        .prisma-impact * {
+          font-family: var(--font-body);
+        }
+
+        .prisma-impact .font-serif,
+        .prisma-impact .font-serif * {
+          font-family: var(--font-display) !important;
+        }
+
+
+
+        .prisma-impact .liquid-glass {
+          background: rgba(222, 219, 200, 0.02);
+          background-blend-mode: luminosity;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: none;
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .prisma-impact .liquid-glass::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          padding: 1px;
+          background: linear-gradient(
+            180deg,
+            rgba(222, 219, 200, 0.25) 0%,
+            rgba(222, 219, 200, 0.08) 20%,
+            rgba(222, 219, 200, 0) 40%,
+            rgba(222, 219, 200, 0) 60%,
+            rgba(222, 219, 200, 0.08) 80%,
+            rgba(222, 219, 200, 0.25) 100%
+          );
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+      ` }} />
+
+      {/* Fullscreen Cinematic Background Video Layer with scroll fade-and-scale */}
+      <motion.div 
+        initial={{ scale: 1.06, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 0.65 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] as const }}
+        className="absolute inset-0 z-0 pointer-events-none"
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transform-gpu will-change-transform"
+        />
+      </motion.div>
+
+      {/* Cinematic Overlays and Vignettes */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 z-1 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.7)_100%)] z-1 pointer-events-none" />
+
+
+      {/* Ambient Moody Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#DEDBC8]/2 rounded-full blur-[160px] pointer-events-none z-1" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#DEDBC8]/3 rounded-full blur-[140px] pointer-events-none z-1" />
+
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-[1600px] flex flex-col items-center">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-20 max-w-4xl px-4">
+          {/* Badge Label */}
+          <motion.div
+            initial={{ y: 15, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+            className="liquid-glass rounded-full px-6 py-2 border border-[#D4AF37]/15 text-[#D4AF37] text-[10px] font-bold mb-8 uppercase tracking-[0.25em] select-none drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+          >
+            Prompt Techies Impact
+          </motion.div>
+
+          {/* Heading */}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-8 flex flex-wrap justify-center gap-x-3 gap-y-1 md:gap-x-5 md:gap-y-2 items-center text-center">
+            {["Making", "a", "difference", "in", "the", "student", "community."].map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.05,
+                  ease: [0.16, 1, 0.3, 1] as const,
+                }}
+                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] pb-2"
+                style={{ fontFamily: "'Instrument Serif', serif" }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h2>
+
+          {/* Description */}
+          <motion.p
+            initial={{ y: 15, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
+            className="text-sm md:text-base font-normal text-[#E1E0CC]/70 leading-relaxed max-w-2xl"
+          >
+            At Prompt Techies, we are dedicated to making a positive impact in the community through various programs and initiatives that empower real-world builders.
+          </motion.p>
         </div>
 
-        {/* Row 1, Box 2 - Large Image */}
-        <div className="lg:col-span-2 relative aspect-[16/10] md:aspect-[21/9] lg:aspect-auto rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
-          <Image
-            src="/impact-image-v2.jpg"
-            alt="Prompt Techies Impact"
-            fill
-            className="object-cover"
-          />
-        </div>
+        {/* Grid Layout - Clean 4-Column Symmetry */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {/* Card 1 - Students Reached Online */}
+          <motion.div
+            {...cardAnimation(0)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+          >
+            {/* Local Glow */}
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+            
+            {/* Icon Wrapper */}
+            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+              <Users className="w-4 h-4" />
+            </div>
 
-        {/* Row 2, Box 3 - Matte Charcoal Metric */}
-        <div className="bg-[#121212] rounded-[32px] p-10 flex flex-col items-start justify-start text-white border border-white/5 shadow-2xl">
-          <span className="text-7xl font-bold mb-8 text-[#004bff]">
-            <Counter end={30} suffix="+" />
-          </span>
-          <h3 className="text-xl font-bold mb-4 text-white">Mentorship Sessions</h3>
-          <p className="text-sm font-normal text-gray-400 leading-relaxed">
-            In 2025, Prompt Techies led over 30 in-person and virtual mentorship programs covering key topics.
-          </p>
-        </div>
+            {/* Metric & Text */}
+            <div className="mt-8">
+              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+                <Counter end={5000} suffix="+" />
+              </span>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Students Reached Online</h3>
+              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+                In 2025, our online initiatives reached over 5000 individuals with precise, accessible, and compelling information.
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Row 2, Box 4 - Matte Charcoal Metric */}
-        <div className="bg-[#121212] rounded-[32px] p-10 flex flex-col items-start justify-start text-white border border-white/5 shadow-2xl">
-          <span className="text-7xl font-bold mb-8 text-[#004bff]">
-            <Counter end={100} suffix="+" />
-          </span>
-          <h3 className="text-xl font-bold mb-4 text-white">Projects Completed</h3>
-          <p className="text-sm font-normal text-gray-400 leading-relaxed">
-            Over 100 industry-level projects successfully conceptualized and delivered by our interns across various technical and business domains.
-          </p>
-        </div>
+          {/* Card 2 - Mentorship Sessions */}
+          <motion.div
+            {...cardAnimation(1)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
 
-        {/* Row 2, Box 5 - Matte Charcoal Metric */}
-        <div className="bg-[#121212] rounded-[32px] p-10 flex flex-col items-start justify-start text-white border border-white/5 shadow-2xl">
-          <span className="text-7xl font-bold mb-8 text-[#004bff]">
-            <Counter end={100} suffix="+" />
-          </span>
-          <h3 className="text-xl font-bold mb-4 text-white">Internships</h3>
-          <p className="text-sm font-normal text-gray-400 leading-relaxed">
-            In 2025, Prompt Techies provided 100+ internship opportunities to students across various technical and business domains.
-          </p>
+            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+              <BookOpen className="w-4 h-4" />
+            </div>
+
+            <div className="mt-8">
+              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+                <Counter end={30} suffix="+" />
+              </span>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Mentorship Sessions</h3>
+              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+                In 2025, Prompt Techies led over 30 in-person and virtual mentorship programs covering key professional and technical topics.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Card 3 - Projects Completed */}
+          <motion.div
+            {...cardAnimation(2)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+
+            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+              <Layers className="w-4 h-4" />
+            </div>
+
+            <div className="mt-8">
+              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+                <Counter end={100} suffix="+" />
+              </span>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Projects Completed</h3>
+              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+                Over 100 industry-level projects successfully conceptualized and delivered by our interns across various technical and business domains.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Card 4 - Internships Provided */}
+          <motion.div
+            {...cardAnimation(3)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+
+            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+              <Award className="w-4 h-4" />
+            </div>
+
+            <div className="mt-8">
+              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+                <Counter end={100} suffix="+" />
+              </span>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Internships Provided</h3>
+              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+                In 2025, Prompt Techies provided 100+ internship opportunities to students across various technical and business domains.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
