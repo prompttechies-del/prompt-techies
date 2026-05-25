@@ -27,6 +27,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-syncopate: var(--font-syncopate);
+  --font-instrument-serif: var(--font-instrument-serif);
+  --font-almarai: var(--font-almarai);
+  --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,7 +43,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 /* Lenis Smooth Scroll Foundation */

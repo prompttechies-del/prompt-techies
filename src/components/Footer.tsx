@@ -161,8 +161,11 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-black w-full min-h-[650px] flex flex-col justify-between pt-24 pb-12 px-6 md:px-12">
       {/* Liquid Glass and Custom Font CSS Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-        
+        .premium-logo-font {
+          font-family: var(--font-syncopate), sans-serif !important;
+          letter-spacing: 0.28em !important;
+        }
+
         .liquid-glass {
           background: rgba(255, 255, 255, 0.015);
           background-blend-mode: luminosity;
@@ -202,7 +205,7 @@ export default function Footer() {
         muted
         autoPlay
         playsInline
-        preload="auto"
+        preload="none"
         poster="/featured_bg.png"
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
@@ -230,7 +233,7 @@ export default function Footer() {
           {/* Heading */}
           <h2 
             className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 select-none font-normal pb-2"
-            style={{ fontFamily: "'Instrument Serif', serif" }}
+            style={{ fontFamily: "var(--font-instrument-serif), serif" }}
           >
             Dream Bigger. Build Faster. Lead What's Next.
           </h2>
@@ -274,7 +277,7 @@ export default function Footer() {
                 alt="Prompt Techies Logo"
                 className="h-10 w-10 rounded-lg shadow-[0_0_15px_rgba(0,75,255,0.15)] border border-white/10"
               />
-              <span className="font-mono font-black italic tracking-[0.2em] bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-sm uppercase">
+              <span className="premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-xs uppercase">
                 PROMPT TECHIES
               </span>
             </div>

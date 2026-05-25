@@ -39,7 +39,7 @@ function TestimonialCard({ name, college, feedback, colorIndex }: { name: string
   const textColor = neonTextColors[colorIndex % neonTextColors.length];
   
   return (
-    <div className={`w-[320px] flex-shrink-0 bg-[#121216]/40 border border-white/5 ${borderStyle} rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:scale-[1.05] hover:bg-[#121216]/70 whitespace-normal flex flex-col justify-between group`}>
+    <div className={`w-[320px] flex-shrink-0 bg-[#121216]/40 backdrop-blur-md border border-white/5 ${borderStyle} rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:scale-[1.05] hover:bg-[#121216]/70 whitespace-normal flex flex-col justify-between group`}>
       {/* Decorative Quote Mark */}
       <div className="absolute right-4 top-2 text-white/5 text-6xl font-serif select-none pointer-events-none group-hover:text-white/10 transition-colors">
         ”
@@ -61,12 +61,26 @@ export default function TestimonialsSection() {
   return (
     <section className="w-full bg-[#0a0a0a] py-24 flex flex-col items-center overflow-hidden border-t border-white/5 relative">
       
+      {/* Background Video Animation */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        preload="none"
+        className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform opacity-[0.22] pointer-events-none z-0" 
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4"
+      />
+
+      {/* Fade Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] pointer-events-none z-0" />
+      
       {/* Ambient BG Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#004bff]/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#004bff]/5 blur-[160px] pointer-events-none z-0" />
 
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-4xl px-6 relative z-10">
-        <div className="bg-gradient-to-r from-[#00c8ff]/10 to-[#004bff]/10 border border-[#00c8ff]/20 text-[#00c8ff] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4 inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,200,255,0.1)]">
+        <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] mb-4 inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(245,175,25,0.08)]">
           💬 Wall of Love
         </div>
         

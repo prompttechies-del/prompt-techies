@@ -7,8 +7,6 @@ export default function CTASection() {
     <section className="velorah-container relative w-full py-24 md:py-32 flex flex-col items-center justify-center overflow-hidden bg-[hsl(201,100%,13%)] text-white">
       {/* Localized Stylesheet for Fonts, Color Variables, Liquid Glass & Animations */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
-
         .velorah-container {
           --background: 201 100% 13%;
           --foreground: 0 0% 100%;
@@ -21,8 +19,8 @@ export default function CTASection() {
           --border: 0 0% 18%;
           --input: 0 0% 18%;
           
-          --font-display: 'Instrument Serif', serif;
-          --font-body: 'Inter', sans-serif;
+          --font-display: var(--font-instrument-serif), serif;
+          --font-body: var(--font-inter), sans-serif;
 
           background-color: hsl(var(--background));
           color: hsl(var(--foreground));
@@ -65,6 +63,7 @@ export default function CTASection() {
           );
           -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
+          -webkit-mask-composite: xor;
           mask-composite: exclude;
           pointer-events: none;
         }
@@ -100,7 +99,7 @@ export default function CTASection() {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transform-gpu will-change-transform"
       />

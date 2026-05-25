@@ -9,13 +9,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="flex-1 bg-[#0a0a0a] text-white">
-      {/* Hero Section - Electric Blue Banner */}
-      <section className="relative pt-32 pb-20 px-6 bg-[#004bff] border-b border-white/10">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Connect with <span className="text-[#a8c7ff]">Prompt Techies</span>.
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
+            Contact Us
+          </div>
+          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+            Connect with <span className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent">Prompt Techies</span>.
           </h1>
-          <p className="text-base lg:text-lg text-white/80 max-w-2xl leading-relaxed">
+          <p className="text-base lg:text-xl text-gray-400 max-w-2xl leading-relaxed">
             Reach out to our national portal team for collaborations, institutional nodes, or support.
           </p>
         </div>

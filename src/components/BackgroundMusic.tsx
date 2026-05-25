@@ -175,7 +175,7 @@ export default function BackgroundMusic() {
         ref={audioRef}
         src="/audio/aaya-sher.mp3"
         loop
-        preload="auto"
+        preload="none"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
@@ -237,26 +237,20 @@ export default function BackgroundMusic() {
               </button>
             </div>
 
-            {/* Track Details & Vinyl Disc */}
+            {/* Track Details & Logo */}
             <div className="flex items-center gap-4">
-              {/* Spinning Vinyl Record Visual */}
-              <div className="relative w-14 h-14 rounded-full flex-shrink-0 bg-neutral-900 border border-white/10 flex items-center justify-center shadow-lg group overflow-hidden">
-                <div 
-                  className={`w-full h-full rounded-full bg-gradient-to-tr from-neutral-950 via-neutral-800 to-neutral-950 flex items-center justify-center transition-transform duration-1000 ${isPlaying ? 'animate-spin' : ''}`}
-                  style={{ animationDuration: '6s', animationPlayState: isPlaying ? 'running' : 'paused' }}
-                >
-                  {/* Vinyl grooves */}
-                  <div className="w-12 h-12 rounded-full border border-neutral-950/20 flex items-center justify-center">
-                    <div className="w-9 h-9 rounded-full border border-neutral-950/40 flex items-center justify-center">
-                      <div className="w-6 h-6 rounded-full border border-neutral-950/60 flex items-center justify-center">
-                        {/* Center Label */}
-                        <div className="w-3 h-3 rounded-full bg-gradient-to-tr from-[#00c8ff] to-[#004bff] flex items-center justify-center">
-                          <div className="w-1 h-1 rounded-full bg-black" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Spinning Prompt Techies Logo */}
+              <div className="relative w-14 h-14 rounded-full flex-shrink-0 bg-neutral-900 border border-[#00c8ff]/30 flex items-center justify-center shadow-lg shadow-[#00c8ff]/10 group overflow-hidden">
+                <img 
+                  src="/logo.jpg" 
+                  alt="Prompt Techies Logo" 
+                  className={`w-full h-full rounded-full object-cover transition-transform duration-1000 ${isPlaying ? 'animate-spin' : ''}`}
+                  style={{ 
+                    animationDuration: '8s', 
+                    animationPlayState: isPlaying ? 'running' : 'paused',
+                    filter: 'drop-shadow(0 0 4px rgba(0, 200, 255, 0.2))'
+                  }}
+                />
               </div>
 
               {/* Text Info */}

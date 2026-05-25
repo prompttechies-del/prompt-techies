@@ -5,15 +5,29 @@ export default function UpdateSection() {
     <section className="w-full bg-[#0a0a0a] pb-24 px-4 md:px-8 flex justify-center">
       <div className="w-full max-w-[1600px] bg-gradient-to-br from-[#0c0c0e] via-[#121216] to-[#0a0a0c] border border-white/10 rounded-[32px] md:rounded-[48px] p-8 md:p-12 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 shadow-2xl shadow-black/50">
         
+        {/* Background Video Animation */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform opacity-[0.22] pointer-events-none z-0" 
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4"
+        />
+
+        {/* Fade overlay to blend the video */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none z-0" />
+
         {/* Neon Ambient Glows */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#004bff]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#00c8ff]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#004bff]/15 blur-[120px] pointer-events-none z-0" />
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#00c8ff]/10 blur-[120px] pointer-events-none z-0" />
 
         {/* Left Column - Hero Statement & Action */}
         <div className="flex-1 flex flex-col items-start justify-center relative z-10 gap-6 lg:max-w-2xl">
           {/* Gen-Z Neon Badge */}
-          <div className="bg-gradient-to-r from-[#00c8ff]/20 to-[#004bff]/20 border border-[#00c8ff]/40 text-[#00c8ff] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] inline-flex items-center gap-1.5 shadow-[0_0_20px_rgba(0,200,255,0.15)]">
-            <span className="w-2 h-2 rounded-full bg-[#00c8ff] animate-pulse" />
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(245,175,25,0.08)]">
+            <span className="w-2 h-2 rounded-full bg-[#f5af19] animate-pulse" />
             Join the movement
           </div>
 

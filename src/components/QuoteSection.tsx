@@ -28,10 +28,9 @@ export default function QuoteSection() {
   return (
     <section className="bg-black relative px-4 md:px-6 py-20 md:py-32 font-sans overflow-hidden">
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
         .prisma-quote {
-          --font-display: 'Instrument Serif', serif;
-          --font-body: 'Almarai', -apple-system, BlinkMacSystemFont, sans-serif;
+          --font-display: var(--font-instrument-serif), serif;
+          --font-body: var(--font-almarai), -apple-system, BlinkMacSystemFont, sans-serif;
           font-family: var(--font-body);
         }
         .prisma-quote * {
@@ -86,8 +85,8 @@ export default function QuoteSection() {
             className="mt-16 md:mt-24 max-w-2xl mx-auto flex flex-col items-center gap-6"
           >
             <div className="w-12 h-px bg-[#DEDBC8]/30"></div>
-            <p className="text-sm sm:text-base md:text-lg tracking-wide font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
-              The Prompt Techies Team
+            <p className="text-sm sm:text-base md:text-lg tracking-wide font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] uppercase tracking-[0.08em]">
+              Projects by Prompt Techies
             </p>
           </motion.div>
         </div>
@@ -98,7 +97,7 @@ export default function QuoteSection() {
           {/* Card 1 (Image/Video) */}
           <motion.div {...cardAnimation(0)} className="relative rounded-[2rem] overflow-hidden min-h-[380px] md:min-h-[420px] lg:min-h-0 lg:h-full border border-[#212121]">
             <video 
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="none"
               className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform" 
               src={"https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"}
             />

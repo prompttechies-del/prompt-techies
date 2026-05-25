@@ -10,13 +10,13 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-30 px-6 text-center max-w-5xl text-white mb-12">
-        <div className="border border-[#004bff]/30 text-[#004bff] bg-[#004bff]/5 px-3 py-1 rounded-full text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em] mb-6 inline-block">
+        <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.1em] mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
           Welcome to Prompt Techies
         </div>
         <h1 className="text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] mb-6 tracking-tight text-white">
           Empowering Next-Gen <br className="hidden md:inline" />
           <span className="relative inline-block mt-2 md:mt-0 font-bold md:whitespace-nowrap">
-            <span className="bg-gradient-to-r from-[#ffe07d] via-[#f5af19] to-[#ffe07d] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent">
               Technical Leaders & Innovators
             </span>
             <span className="absolute left-0 bottom-[-4px] md:bottom-[-6px] w-full h-[4px] md:h-[6px] bg-gradient-to-r from-[#ffe07d] to-[#f5af19] rounded-full"></span>

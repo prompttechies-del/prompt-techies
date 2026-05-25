@@ -25,6 +25,13 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 md:px-12 group pointer-events-none">
+      {/* Premium Logo Font */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .premium-logo-font {
+          font-family: var(--font-syncopate), sans-serif !important;
+          letter-spacing: 0.28em !important;
+        }
+      ` }} />
       <nav 
         className={`
           flex items-center justify-between w-full transition-all duration-500 ease-in-out pointer-events-auto
@@ -42,16 +49,16 @@ export default function Navbar() {
               className={`transition-all duration-500 rounded-lg ${scrolled ? 'h-5 md:h-7' : 'h-7 md:h-9'}`}
               style={{ filter: 'none' }}
             />
-            <span className={`font-mono font-black italic tracking-[0.2em] bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.7)] drop-shadow-[0_0_2px_rgba(0,75,255,0.9)] transition-all duration-500 uppercase ${scrolled ? 'text-[10px] md:text-xs' : 'text-xs md:text-sm'}`}>
+            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'}`}>
               PROMPT TECHIES
             </span>
           </Link>
         </div>
 
         <div className="flex items-center gap-4 lg:gap-8">
-          <div className="hidden lg:flex items-center gap-5 text-[13px] font-medium text-white">
+          <div className="hidden lg:flex items-center gap-5 text-[13px] font-semibold text-[#ffe07d]">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-[#004bff] transition-colors whitespace-nowrap opacity-80 hover:opacity-100">
+              <Link key={link.name} href={link.href} className="hover:text-white transition-all whitespace-nowrap opacity-85 hover:opacity-100 drop-shadow-[0_0_2px_rgba(255,224,125,0.2)]">
                 {link.name}
               </Link>
             ))}
@@ -96,7 +103,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-normal text-white hover:text-[#004bff] opacity-70 hover:opacity-100 transition-all border-b border-white/5 pb-4"
+                className="text-lg font-medium text-[#ffe07d] hover:text-white opacity-85 hover:opacity-100 transition-all border-b border-white/5 pb-4"
               >
                 {link.name}
               </Link>

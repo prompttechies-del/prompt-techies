@@ -87,11 +87,9 @@ export default function ImpactSection() {
     <section className="prisma-impact relative w-full bg-[#000000] py-28 px-4 md:px-8 flex flex-col items-center overflow-hidden">
       {/* Localized Stylesheet for Fonts & Prisma Utilities */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
-
         .prisma-impact {
-          --font-display: 'Instrument Serif', serif;
-          --font-body: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          --font-display: var(--font-instrument-serif), serif;
+          --font-body: var(--font-almarai), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           font-family: var(--font-body);
         }
 
@@ -152,7 +150,7 @@ export default function ImpactSection() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
           className="absolute inset-0 w-full h-full object-cover opacity-60 transform-gpu will-change-transform"
         />
@@ -164,9 +162,9 @@ export default function ImpactSection() {
 
 
       {/* Ambient Moody Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#DEDBC8]/2 rounded-full blur-[160px] pointer-events-none z-1" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#DEDBC8]/3 rounded-full blur-[140px] pointer-events-none z-1" />
-
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#004bff]/5 rounded-full blur-[160px] pointer-events-none z-1" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#00c8ff]/4 rounded-full blur-[140px] pointer-events-none z-1" />
+ 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1600px] flex flex-col items-center">
         {/* Header */}
@@ -177,11 +175,11 @@ export default function ImpactSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
-            className="liquid-glass rounded-full px-6 py-2 border border-[#D4AF37]/15 text-[#D4AF37] text-[10px] font-bold mb-8 uppercase tracking-[0.25em] select-none drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+            className="liquid-glass rounded-full px-6 py-2 border border-[#ffe07d]/35 text-[#ffe07d] text-[10px] font-semibold mb-8 uppercase tracking-[0.25em] select-none drop-shadow-[0_0_8px_rgba(245,175,25,0.25)]"
           >
             Prompt Techies Impact
           </motion.div>
-
+ 
           {/* Heading */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-8 flex flex-wrap justify-center gap-x-3 gap-y-1 md:gap-x-5 md:gap-y-2 items-center text-center">
             {["Making", "a", "difference", "in", "the", "student", "community."].map((word, index) => (
@@ -202,107 +200,107 @@ export default function ImpactSection() {
               </motion.span>
             ))}
           </h2>
-
+ 
           {/* Description */}
           <motion.p
             initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
-            className="text-sm md:text-base font-normal text-[#E1E0CC]/70 leading-relaxed max-w-2xl"
+            className="text-sm md:text-base font-normal text-gray-400 leading-relaxed max-w-2xl"
           >
             At Prompt Techies, we are dedicated to making a positive impact in the community through various programs and initiatives that empower real-world builders.
           </motion.p>
         </div>
-
+ 
         {/* Grid Layout - Clean 4-Column Symmetry */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {/* Card 1 - Students Reached Online */}
           <motion.div
             {...cardAnimation(0)}
-            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
           >
             {/* Local Glow */}
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
             
             {/* Icon Wrapper */}
-            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Users className="w-4 h-4" />
             </div>
-
+ 
             {/* Metric & Text */}
             <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={5000} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Students Reached Online</h3>
-              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Students Reached Online</h3>
+              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
                 In 2025, our online initiatives reached over 5000 individuals with precise, accessible, and compelling information.
               </p>
             </div>
           </motion.div>
-
+ 
           {/* Card 2 - Mentorship Sessions */}
           <motion.div
             {...cardAnimation(1)}
-            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
-
-            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
+            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <BookOpen className="w-4 h-4" />
             </div>
-
+ 
             <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={30} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Mentorship Sessions</h3>
-              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Mentorship Sessions</h3>
+              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
                 In 2025, Prompt Techies led over 30 in-person and virtual mentorship programs covering key professional and technical topics.
               </p>
             </div>
           </motion.div>
-
+ 
           {/* Card 3 - Projects Completed */}
           <motion.div
             {...cardAnimation(2)}
-            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
-
-            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
+            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Layers className="w-4 h-4" />
             </div>
-
+ 
             <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={100} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Projects Completed</h3>
-              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Projects Completed</h3>
+              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
                 Over 100 industry-level projects successfully conceptualized and delivered by our interns across various technical and business domains.
               </p>
             </div>
           </motion.div>
-
+ 
           {/* Card 4 - Internships Provided */}
           <motion.div
             {...cardAnimation(3)}
-            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-white/20 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 relative overflow-hidden group"
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#DEDBC8]/3 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
-
-            <div className="w-8 h-8 rounded-xl bg-[#DEDBC8]/5 border border-[#DEDBC8]/15 flex items-center justify-center text-[#DEDBC8] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner">
+            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
+            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Award className="w-4 h-4" />
             </div>
-
+ 
             <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold text-[#DEDBC8] tracking-tight block mb-3">
+              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={100} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-[#E1E0CC]">Internships Provided</h3>
-              <p className="text-xs md:text-sm font-normal text-[#E1E0CC]/60 leading-relaxed">
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Internships Provided</h3>
+              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
                 In 2025, Prompt Techies provided 100+ internship opportunities to students across various technical and business domains.
               </p>
             </div>

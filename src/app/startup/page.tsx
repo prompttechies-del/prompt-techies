@@ -14,7 +14,7 @@ export default function StartupPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-          <div className="border border-[#004bff]/30 text-[#004bff] bg-[#004bff]/5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
             Venture-Building Platform
           </div>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
@@ -178,10 +178,16 @@ export default function StartupPage() {
           <div className="space-y-8">
             <h2 className="text-2xl font-bold text-white">Our Initiatives & Brands</h2>
             <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-8">
-                <span className="text-2xl font-black text-white opacity-20 select-none">CLEED</span>
-                <span className="text-2xl font-black text-white opacity-20 select-none">LEARN GRID</span>
-                <span className="text-2xl font-black text-[#004bff] select-none">PROMPT TECHIES</span>
+              <style dangerouslySetInnerHTML={{ __html: `
+                .premium-logo-font {
+                  font-family: var(--font-syncopate), sans-serif !important;
+                  letter-spacing: 0.28em !important;
+                }
+              ` }} />
+              <div className="flex flex-wrap items-center gap-6 md:gap-8">
+                <span className="text-xl font-black text-white opacity-20 select-none">CLEED</span>
+                <span className="text-xl font-black text-white opacity-20 select-none">LEARN GRID</span>
+                <span className="premium-logo-font text-sm font-bold text-[#004bff] select-none">PROMPT TECHIES</span>
               </div>
               <p className="text-sm text-gray-400 max-w-md">An ecosystem where student innovation consistently turns into real companies.</p>
             </div>
