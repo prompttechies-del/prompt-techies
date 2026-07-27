@@ -56,16 +56,29 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 xl:gap-4">
-          <div className="hidden xl:flex items-center gap-3 text-[11px] xl:text-[12px] font-semibold text-[#00c8ff]">
+          <div className="hidden xl:flex items-center gap-3 text-[11px] xl:text-[12px] font-semibold text-[#ffe07d]">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-white transition-all whitespace-nowrap opacity-85 hover:opacity-100 drop-shadow-[0_0_2px_rgba(0,200,255,0.2)]">
+              <Link key={link.name} href={link.href} className="hover:text-white transition-all whitespace-nowrap opacity-85 hover:opacity-100 drop-shadow-[0_0_2px_rgba(255,224,125,0.2)]">
                 {link.name}
               </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
-
+            <Link 
+              href="https://prompt-os-x.vercel.app/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`
+                hidden sm:flex rounded-full text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-gradient-to-r from-[#00c8ff] to-[#004bff] text-white hover:scale-105 shadow-[0_0_15px_rgba(0,200,255,0.3)]
+                ${scrolled 
+                  ? 'px-4 py-2' 
+                  : 'px-5 py-2.5'
+                }
+              `}
+            >
+              Prompt OS
+            </Link>
             <Link 
               href="https://www.instagram.com/prompt_techies" 
               target="_blank"
@@ -104,7 +117,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-[#00c8ff] hover:text-white opacity-85 hover:opacity-100 transition-all border-b border-white/5 pb-4"
+                className="text-lg font-medium text-[#ffe07d] hover:text-white opacity-85 hover:opacity-100 transition-all border-b border-white/5 pb-4"
               >
                 {link.name}
               </Link>

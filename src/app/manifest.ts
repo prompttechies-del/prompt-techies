@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Prompt Techies',
     short_name: 'Prompt Techies',
-    description: 'A student-focused technology and innovation ecosystem for AI, startups, and real-world projects.',
+    description: 'An AI-first technology company building intelligent software, AI products, automation solutions, and developer platforms.',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

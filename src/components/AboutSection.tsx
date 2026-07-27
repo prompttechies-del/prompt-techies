@@ -34,6 +34,14 @@ export default function AboutSection() {
               Try Prompt OS
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </Link>
+            <Link 
+              href="https://www.instagram.com/prompt_techies" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-[#004bff] text-white rounded-full text-sm font-bold hover:bg-[#003cb3] transition-all shadow-md shadow-[#004bff]/20 whitespace-nowrap"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
 

@@ -34,7 +34,7 @@ export default function QuoteSection() {
   });
 
   const quoteWords = [
-    "Built", "for", "developers", "Who", "Want", "More", "Than", "Just", "a", "Degree."
+    "Built", "for", "Founders", "Who", "Want", "More", "Than", "Just", "an", "Idea."
   ];
 
   return (
@@ -98,7 +98,7 @@ export default function QuoteSection() {
           >
             <div className="w-12 h-px bg-[#DEDBC8]/30"></div>
             <p className="text-sm sm:text-base md:text-lg tracking-wide font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] uppercase tracking-[0.08em]">
-              Building Intelligent Products That Matter. Built by Developers. Powered by AI
+              Intelligent products built by engineers, for the future
             </p>
           </motion.div>
         </div>
@@ -116,7 +116,7 @@ export default function QuoteSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
             <div className="relative h-full flex items-end p-6 md:p-8">
               <p className="text-2xl sm:text-3xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
-                Building Intelligent Products That Matter. Built by Developers. Powered by AI
+                Explore intelligent products built by engineers, for the future
               </p>
             </div>
           </motion.div>

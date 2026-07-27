@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/private/', '/api/', '/_next/'],
+        disallow: ['/private/', '/api/', '/admin/', '/dashboard/', '/_next/'],
       },
       {
         userAgent: 'GPTBot',
@@ -31,7 +31,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       }
     ],
-    sitemap: 'https://www.prompttechies.in/sitemap.xml',
-    host: 'https://www.prompttechies.in',
+    sitemap: 'https://prompttechies.in/sitemap.xml',
+    host: 'https://prompttechies.in',
   };
 }

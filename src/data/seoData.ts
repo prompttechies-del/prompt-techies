@@ -1,4 +1,4 @@
-export const baseUrl = 'https://www.prompttechies.in';
+export const baseUrl = 'https://prompttechies.in';
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -8,7 +8,7 @@ export const organizationSchema = {
   "url": baseUrl,
   "logo": `${baseUrl}/hero.png`,
   "image": `${baseUrl}/hero.png`,
-  "description": "Prompt Techies is a student-focused technology and innovation ecosystem that helps students learn AI, build real-world projects, participate in hackathons, gain internships, receive mentorship, and launch startups.",
+  "description": "Prompt Techies is an AI-first technology company focused on building intelligent software, AI-powered products, automation solutions, developer platforms, and innovation-driven digital experiences.",
   "foundingLocation": "India",
   "award": ["DPIIT Recognized Startup", "MSME Registered Company"],
   "sameAs": [
@@ -71,7 +71,7 @@ export const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Advanced AI & Generative AI Training",
-  "description": "Learn Generative AI, Machine Learning, and Prompt Engineering through practical workshops.",
+  "description": "Learn Generative AI, Machine Learning, and Prompt Engineering through practical developer workshops.",
   "provider": {
     "@type": "Organization",
     "name": "Prompt Techies",
@@ -90,7 +90,7 @@ export const saahilSchema = {
   },
   "url": `${baseUrl}/about#saahil-zameer`,
   "image": `${baseUrl}/saahil.jpg`,
-  "description": "Saahil founded Prompt Techies with the vision of transforming ambitious students into skilled innovators and future founders. He leads the organization's long term strategy, partnerships, product vision, and ecosystem growth."
+  "description": "Saahil founded Prompt Techies with the vision of building cutting-edge AI products and developer tools. He leads the company's long-term strategy, product vision, enterprise partnerships, and corporate growth."
 };
 
 export const suhanaSchema = {
@@ -104,7 +104,7 @@ export const suhanaSchema = {
   },
   "url": `${baseUrl}/about#mohammad-suhana`,
   "image": `${baseUrl}/suhana.jpg`,
-  "description": "Mohammad Suhana works closely with the CEO to shape the organization's strategic direction and expand its impact."
+  "description": "Mohammad Suhana works closely with the CEO to shape the company's strategic direction and expand its global market presence."
 };
 
 export const amarnadhSchema = {
@@ -118,7 +118,7 @@ export const amarnadhSchema = {
   },
   "url": `${baseUrl}/about#amarnadh-reddy`,
   "image": `${baseUrl}/amarnadh.jpg`,
-  "description": "Amarnadh leads the technology vision of Prompt Techies, overseeing product architecture, software development, and AI initiatives."
+  "description": "Amarnadh leads the technology vision of Prompt Techies, overseeing product architecture, cloud engineering, and AI initiatives."
 };
 
 export const meghanaSchema = {
@@ -132,7 +132,7 @@ export const meghanaSchema = {
   },
   "url": `${baseUrl}/about#meghana-thipanni`,
   "image": `${baseUrl}/meghana.jpg`,
-  "description": "Meghana manages the day to day operations of Prompt Techies, ensuring seamless execution across programs, events, and partnerships."
+  "description": "Meghana manages the day-to-day operations of Prompt Techies, ensuring seamless execution across software products, client services, and enterprise partnerships."
 };
 
 export const prabhasSchema = {
@@ -146,7 +146,7 @@ export const prabhasSchema = {
   },
   "url": `${baseUrl}/about#prabhas-banavath`,
   "image": `${baseUrl}/prabhas.jpg`,
-  "description": "Prabhas drives the marketing and communication strategy of Prompt Techies, leading brand campaigns and digital marketing."
+  "description": "Prabhas drives the global marketing and brand strategy of Prompt Techies, leading product growth and digital campaigns."
 };
 
 export const ananyaSchema = {
@@ -160,7 +160,7 @@ export const ananyaSchema = {
   },
   "url": `${baseUrl}/about#ananya-reddy`,
   "image": `${baseUrl}/ananya.jpg`,
-  "description": "Ananya leads Prompt Techies' brand identity and business growth initiatives, developing strategic partnerships."
+  "description": "Ananya leads Prompt Techies' brand identity and business development initiatives, securing key enterprise and partner relationships."
 };
 
 export const allPeopleSchemas = [

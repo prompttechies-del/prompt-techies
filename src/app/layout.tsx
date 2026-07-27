@@ -44,16 +44,16 @@ import { organizationSchema, websiteSchema, baseUrl } from "@/data/seoData";
 
 export const metadata: Metadata = {
   title: {
-    default: "Prompt Techies | Student Technology & Innovation Ecosystem",
+    default: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
     template: "%s | Prompt Techies",
   },
-  description: "Prompt Techies is a student-focused technology and innovation ecosystem that helps students learn AI, build real-world projects, participate in hackathons, and launch startups.",
+  description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
   metadataBase: new URL(baseUrl),
-  keywords: ["Prompt Techies", "Student Innovation", "Technology Education", "Startup Incubator", "AI Education", "Hackathons", "Tech Community"],
+  keywords: ["Prompt Techies", "AI Technology Company", "AI Workshops", "Software Development", "Hackathons", "SaaS Products", "Developer Platforms", "Enterprise Automation"],
   authors: [{ name: "Prompt Techies" }],
   openGraph: {
-    title: "Prompt Techies | Student Technology & Innovation Ecosystem",
-    description: "Empowering students through AI education, real-world projects, internships, and startup incubation.",
+    title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
+    description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
     url: baseUrl,
     siteName: "Prompt Techies",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: `${baseUrl}/hero.png`,
         width: 1200,
         height: 630,
-        alt: "Prompt Techies Innovation Ecosystem",
+        alt: "Prompt Techies AI & Software Innovation Company",
       },
     ],
     locale: "en_IN",
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prompt Techies | Student Technology & Innovation Ecosystem",
-    description: "Empowering students through AI education, real-world projects, internships, and startup incubation.",
+    title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
+    description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
     images: [`${baseUrl}/hero.png`],
   },
   robots: {

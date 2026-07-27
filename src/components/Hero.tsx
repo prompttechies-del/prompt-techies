@@ -16,10 +16,10 @@ export default function Hero() {
           Welcome to Prompt Techies
         </div>
         <h1 className="text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] mb-6 tracking-tight text-white opacity-0 animate-fade-in-up animation-delay-100">
-          Built for developers <br className="hidden md:inline" />
+          Intelligent AI Products & <br className="hidden md:inline" />
           <span className="relative inline-block mt-2 md:mt-0 font-bold md:whitespace-nowrap">
             <span className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent">
-              Who Want More Than Just a Degree
+              Software Solutions
             </span>
             <span className="absolute left-0 bottom-[-4px] md:bottom-[-6px] w-full h-[4px] md:h-[6px] bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] rounded-full"></span>
           </span>

@@ -21,10 +21,10 @@ export default function VentureBuildingSection() {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-white/80 font-medium mb-8">
-            Turning student ideas into products, startups, and real-world impact.
+            Turning innovative ideas into AI products, SaaS platforms, and enterprise solutions.
           </p>
           <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-3xl mx-auto">
-            Prompt Techies is a student-focused technology and innovation ecosystem that helps ambitious builders move from ideas to execution. We work at the earliest stage, where ideas are still raw, and provide the technology, mentorship, infrastructure, ecosystem access, and execution support needed to build real, market-ready solutions.
+            Prompt Techies is an AI-first technology company and innovation platform that helps ambitious builders move from ideas to execution. We work at the earliest stage, providing the AI software architecture, developer tools, infrastructure, partner access, and engineering support needed to build real, market-ready solutions.
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ export default function VentureBuildingSection() {
       <section className="w-full max-w-7xl mx-auto py-24 px-6 relative">
         <div className="absolute left-0 top-1/4 w-[1px] h-1/2 bg-gradient-to-b from-transparent via-[#00c8ff]/50 to-transparent" />
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-          <div className="lg:w-5/12 relative lg:sticky lg:top-32 z-10 bg-[#0a0a0a]/80 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none py-4 lg:py-0">
+          <div className="lg:w-5/12 sticky top-24">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
               Why Does Prompt Techies Exist?
             </h2>
@@ -55,10 +55,10 @@ export default function VentureBuildingSection() {
             {[
               "Reduce the friction of building and launching",
               "Provide real-world technology infrastructure",
-              "Connect students with mentors and industry experts",
+              "Connect developers with mentors and industry experts",
               "Enable faster idea validation and product development",
               "Create opportunities for testing with real users",
-              "Build pathways from student projects to scalable startups"
+              "Build pathways from innovative projects to scalable startups"
             ].map((item, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors duration-300">
                 <div className="w-10 h-10 rounded-full bg-[#004bff]/20 flex items-center justify-center text-[#00c8ff] font-bold mb-4">

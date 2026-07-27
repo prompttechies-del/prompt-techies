@@ -181,8 +181,8 @@ export default function ImpactSection() {
           </motion.div>
  
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tight mb-8 flex flex-wrap justify-center gap-x-2 gap-y-1 md:gap-x-4 md:gap-y-2 items-center text-center">
-            {["Powering", "India's", "Next", "Generation", "of", "AI", "Builders."].map((word, index) => (
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-8 flex flex-wrap justify-center gap-x-3 gap-y-1 md:gap-x-5 md:gap-y-2 items-center text-center">
+            {["Making", "an", "impact", "in", "the", "digital", "ecosystem."].map((word, index) => (
               <motion.span
                 key={index}
                 initial={{ y: 20, opacity: 0 }}
@@ -214,105 +214,94 @@ export default function ImpactSection() {
         </div>
  
         {/* Grid Layout - Clean 4-Column Symmetry */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-          {/* Card 1 */}
-          <motion.div {...cardAnimation(0)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {/* Card 1 - Students Reached Online */}
+          <motion.div
+            {...cardAnimation(0)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
+          >
+            {/* Local Glow */}
             <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+            
+            {/* Icon Wrapper */}
             <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Users className="w-4 h-4" />
             </div>
+ 
+            {/* Metric & Text */}
             <div className="mt-8">
               <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={5000} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Developers Engaged</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Developers Reached</h3>
               <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Building India's growing network of AI developers, product builders, and innovators through hands-on technical experiences.
+                In 2025, our AI developer platforms and tools were utilized by over 5000 engineers and creators globally.
               </p>
             </div>
           </motion.div>
-
-          {/* Card 2 */}
-          <motion.div {...cardAnimation(1)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
+ 
+          {/* Card 2 - Mentorship Sessions */}
+          <motion.div
+            {...cardAnimation(1)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
+          >
             <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
             <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <BookOpen className="w-4 h-4" />
             </div>
+ 
             <div className="mt-8">
               <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
-                <Counter end={75} suffix="+" />
+                <Counter end={30} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Institutional Partnerships</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Mentorship Sessions</h3>
               <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Collaborating with universities, innovation hubs, and organizations to accelerate technology adoption and developer growth.
+                In 2025, Prompt Techies led over 30 in-person and virtual mentorship programs covering key professional and technical topics.
               </p>
             </div>
           </motion.div>
-
-          {/* Card 3 */}
-          <motion.div {...cardAnimation(2)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
+ 
+          {/* Card 3 - Projects Completed */}
+          <motion.div
+            {...cardAnimation(2)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
+          >
             <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
             <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Layers className="w-4 h-4" />
             </div>
-            <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
-                <Counter end={50} suffix="+" />
-              </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Hackathons Powered</h3>
-              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Driving innovation through AI hackathons, coding competitions, and product-building challenges nationwide.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 4 */}
-          <motion.div {...cardAnimation(3)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
-            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
-              <Award className="w-4 h-4" />
-            </div>
+ 
             <div className="mt-8">
               <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
                 <Counter end={100} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Technical Programs</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Projects Completed</h3>
               <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Conducting AI workshops, engineering bootcamps, startup sessions, and developer-focused learning experiences.
+                Over 100 industry-level projects successfully conceptualized and delivered by our interns across various technical and business domains.
               </p>
             </div>
           </motion.div>
-          
-          {/* Card 5 */}
-          <motion.div {...cardAnimation(4)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
+ 
+          {/* Card 4 - Internships Provided */}
+          <motion.div
+            {...cardAnimation(3)}
+            className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group"
+          >
             <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
-            <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
-              <Layers className="w-4 h-4" />
-            </div>
-            <div className="mt-8">
-              <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
-                <Counter end={500} suffix="+" />
-              </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Products & Projects Built</h3>
-              <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Supporting the creation of real-world AI products, software platforms, and scalable digital solutions.
-              </p>
-            </div>
-          </motion.div>
-          
-          {/* Card 6 */}
-          <motion.div {...cardAnimation(5)} className="bg-black/30 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col items-start justify-between text-white border border-white/5 hover:border-[#00c8ff]/25 hover:bg-black/40 hover:shadow-[0_20px_50px_rgba(0,200,255,0.08)] transition-all duration-500 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#004bff]/5 rounded-full blur-[50px] pointer-events-none transition-all duration-500 group-hover:scale-125" />
+ 
             <div className="w-8 h-8 rounded-xl bg-[#004bff]/5 border border-[#00c8ff]/20 flex items-center justify-center text-[#00c8ff] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-inner shadow-[#00c8ff]/10">
               <Award className="w-4 h-4" />
             </div>
+ 
             <div className="mt-8">
               <span className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent tracking-tight block mb-3 drop-shadow-[0_0_15px_rgba(0,200,255,0.15)]">
-                <Counter end={25} suffix="+" />
+                <Counter end={100} suffix="+" />
               </span>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Expert Jury Panels</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-[#00c8ff] transition-colors duration-300">Products Accelerated</h3>
               <p className="text-xs md:text-sm font-normal text-gray-400 leading-relaxed">
-                Contributing as judges and mentors in national hackathons, startup showcases, and innovation competitions.
+                In 2025, Prompt Techies accelerated 100+ high-growth startups and enterprise products through our AI ecosystem.
               </p>
             </div>
           </motion.div>

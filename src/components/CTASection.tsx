@@ -122,9 +122,10 @@ export default function CTASection() {
           href="https://chat.whatsapp.com/D9eITx9D35RDZupF1zNust"
           target="_blank"
           rel="noopener noreferrer"
-          className="animate-fade-rise-delay-2 inline-block rounded-full px-10 py-3.5 text-sm font-bold text-white bg-[#004bff] hover:bg-[#003cb3] mt-12 hover:scale-[1.05] transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,75,255,0.3)] tracking-widest uppercase relative overflow-hidden group"
+          className="animate-fade-rise-delay-2 liquid-glass inline-block rounded-full px-10 py-3.5 text-sm font-black text-[#00f0ff] mt-12 hover:scale-[1.05] transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,200,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.6)] tracking-widest uppercase relative overflow-hidden group"
         >
-          <span className="relative z-10">Let's Build Together</span>
+          <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-full" />
+          <span className="relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Let's Build Together</span>
         </a>
       </div>
 
