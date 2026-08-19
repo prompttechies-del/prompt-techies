@@ -19,7 +19,7 @@ export default function Hero() {
           <span>Built for developers</span>
           <span className="relative inline-block mt-2 md:mt-0 font-bold md:whitespace-nowrap">
             <span className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent">
-              Software Solutions
+              Who Want More Than Just a Degree
             </span>
             <span className="absolute left-0 bottom-[-4px] md:bottom-[-6px] w-full h-[4px] md:h-[6px] bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] rounded-full"></span>
           </span>

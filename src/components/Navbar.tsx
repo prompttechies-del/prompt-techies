@@ -64,34 +64,22 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <Link 
-              href="https://prompt-os-x.vercel.app/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`
-                hidden sm:flex rounded-full text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-gradient-to-r from-[#00c8ff] to-[#004bff] text-white hover:scale-105 shadow-[0_0_15px_rgba(0,200,255,0.3)]
-                ${scrolled 
-                  ? 'px-4 py-2' 
-                  : 'px-5 py-2.5'
-                }
-              `}
-            >
-              Prompt OS
-            </Link>
+          <div className="flex items-center gap-2 sm:gap-4">
+
             <Link 
               href="https://www.instagram.com/prompt_techies" 
               target="_blank"
               rel="noopener noreferrer"
               className={`
-                rounded-full text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
+                rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
                 ${scrolled 
-                  ? 'px-4 py-2' 
-                  : 'px-5 py-2.5'
+                  ? 'px-3 py-1.5 sm:px-4 sm:py-2' 
+                  : 'px-4 py-2 sm:px-5 sm:py-2.5'
                 }
               `}
             >
-              Connect with Our Team
+              <span className="hidden sm:inline">Connect with Our Team</span>
+              <span className="sm:hidden">Connect</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
