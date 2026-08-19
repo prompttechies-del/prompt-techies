@@ -49,7 +49,7 @@ export default function Navbar() {
               className={`transition-all duration-500 rounded-lg ${scrolled ? 'h-5 md:h-7' : 'h-7 md:h-9'}`}
               style={{ filter: 'none' }}
             />
-            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} hidden md:block xl:hidden 2xl:block`}>
+            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} hidden lg:block xl:hidden 2xl:block`}>
               PROMPT TECHIES
             </span>
           </Link>
@@ -64,22 +64,22 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-2 lg:gap-4">
 
             <Link 
               href="https://www.instagram.com/prompt_techies" 
               target="_blank"
               rel="noopener noreferrer"
               className={`
-                rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-normal md:tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
+                rounded-full text-[8px] lg:text-[10px] font-bold uppercase tracking-normal lg:tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
                 ${scrolled 
-                  ? 'px-2 py-1 md:px-4 md:py-2' 
-                  : 'px-2.5 py-1.5 md:px-5 md:py-2.5'
+                  ? 'px-2 py-1 lg:px-4 lg:py-2' 
+                  : 'px-2.5 py-1.5 lg:px-5 lg:py-2.5'
                 }
               `}
             >
-              <span className="hidden md:inline">Connect with Our Team</span>
-              <span className="md:hidden">Connect</span>
+              <span className="hidden lg:inline">Connect with Our Team</span>
+              <span className="lg:hidden">Connect</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
