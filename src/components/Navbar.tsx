@@ -49,7 +49,7 @@ export default function Navbar() {
               className={`transition-all duration-500 rounded-lg ${scrolled ? 'h-5 md:h-7' : 'h-7 md:h-9'}`}
               style={{ filter: 'none' }}
             />
-            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} block xl:hidden 2xl:block`}>
+            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} hidden sm:block xl:hidden 2xl:block`}>
               PROMPT TECHIES
             </span>
           </Link>
