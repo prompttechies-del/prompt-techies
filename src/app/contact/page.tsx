@@ -1,14 +1,44 @@
 import { Metadata } from 'next';
 import Footer from "@/components/Footer";
 
+import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+
 export const metadata: Metadata = {
   title: 'Contact Us | Prompt Techies HQ',
   description: 'Get in touch with the Prompt Techies national portal team. Reach out for collaborations, institutional nodes, or technical support.',
+  alternates: {
+    canonical: `${baseUrl}/contact`,
+  },
+  openGraph: {
+    title: 'Contact Us | Prompt Techies HQ',
+    description: 'Get in touch with the Prompt Techies national portal team.',
+    url: `${baseUrl}/contact`,
+    images: [`${baseUrl}/hero.png`],
+  }
 };
 
 export default function ContactPage() {
+  const webpageSchema = generateWebPageSchema(
+    "Contact Prompt Techies",
+    "Get in touch with the Prompt Techies national portal team. Reach out for collaborations, institutional nodes, or technical support.",
+    "/contact"
+  );
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", item: "" },
+    { name: "Contact", item: "/contact" }
+  ]);
+
   return (
     <main className="flex-1 bg-[#0a0a0a] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">

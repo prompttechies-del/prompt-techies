@@ -1,14 +1,44 @@
 import { Metadata } from 'next';
 import Footer from "@/components/Footer";
 
+import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+
 export const metadata: Metadata = {
   title: 'Corporate AI Growth Solutions | Partner with Prompt Techies',
   description: 'Accelerate AI adoption through Prompt Techies innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.',
+  alternates: {
+    canonical: `${baseUrl}/business`,
+  },
+  openGraph: {
+    title: 'Corporate AI Growth Solutions | Partner with Prompt Techies',
+    description: 'Accelerate AI adoption through Prompt Techies innovation ecosystem.',
+    url: `${baseUrl}/business`,
+    images: [`${baseUrl}/hero.png`],
+  }
 };
 
 export default function BusinessPage() {
+  const webpageSchema = generateWebPageSchema(
+    "Corporate AI Growth Solutions | Partner with Prompt Techies",
+    "Accelerate AI adoption through Prompt Techies innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.",
+    "/business"
+  );
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", item: "" },
+    { name: "Corporate Partnerships", item: "/business" }
+  ]);
+
   return (
     <main className="flex-1 bg-[#0a0a0a]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         {/* Background Video */}

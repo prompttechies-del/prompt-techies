@@ -171,3 +171,93 @@ export const allPeopleSchemas = [
   prabhasSchema,
   ananyaSchema
 ];
+
+export const generateBreadcrumbSchema = (items: { name: string; item: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((breadcrumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": breadcrumb.name,
+    "item": `${baseUrl}${breadcrumb.item}`
+  }))
+});
+
+export const generateWebPageSchema = (name: string, description: string, url: string) => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": name,
+  "description": description,
+  "url": `${baseUrl}${url}`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Prompt Techies"
+  }
+});
+
+export const generateEventSchema = (name: string, description: string, startDate: string, endDate: string, locationName: string, url: string, image: string) => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": name,
+  "description": description,
+  "startDate": startDate,
+  "endDate": endDate,
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": locationName,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    }
+  },
+  "image": [image],
+  "organizer": {
+    "@type": "Organization",
+    "name": "Prompt Techies",
+    "url": baseUrl
+  },
+  "url": `${baseUrl}${url}`
+});
+
+export const generateArticleSchema = (headline: string, description: string, image: string, datePublished: string, authorName: string, url: string) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": headline,
+  "description": description,
+  "image": [image],
+  "datePublished": datePublished,
+  "author": {
+    "@type": "Person",
+    "name": authorName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Prompt Techies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/hero.png`
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${baseUrl}${url}`
+  }
+});
+
+export const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Prompt Techies Innovation Platform",
+  "operatingSystem": "Web",
+  "applicationCategory": "EducationalApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+

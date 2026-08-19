@@ -4,20 +4,48 @@ import Image from 'next/image';
 import AboutHeroVideo from '@/components/AboutHeroVideo';
 import StoryHoverText from '@/components/StoryHoverText';
 import Footer from "@/components/Footer";
-import { allPeopleSchemas } from '@/data/seoData';
+import { allPeopleSchemas, baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
 export const metadata: Metadata = {
   title: 'About Prompt Techies | Our Mission, Vision & DPIIT Recognition',
   description: 'Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
   keywords: ['Prompt Techies Founder', 'Saahil Zameer Shaik', 'DPIIT-recognized Startup', 'Student Innovation Ecosystem', 'Technology Community'],
+  alternates: {
+    canonical: `${baseUrl}/about`,
+  },
+  openGraph: {
+    title: 'About Prompt Techies | Our Mission, Vision & DPIIT Recognition',
+    description: 'Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
+    url: `${baseUrl}/about`,
+    images: [`${baseUrl}/hero.png`],
+  }
 };
 
 export default function AboutPage() {
+  const webpageSchema = generateWebPageSchema(
+    "About Prompt Techies",
+    "Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.",
+    "/about"
+  );
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", item: "" },
+    { name: "About Us", item: "/about" }
+  ]);
+
   return (
     <main className="flex-1 bg-[#0a0a0a]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(allPeopleSchemas) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">

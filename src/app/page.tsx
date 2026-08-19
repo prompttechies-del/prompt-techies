@@ -11,20 +11,37 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-import { localBusinessSchema } from '@/data/seoData';
+import { localBusinessSchema, baseUrl, saahilSchema, generateWebPageSchema } from '@/data/seoData';
 
 export const metadata: Metadata = {
-  title: 'Prompt Techies | Premier Student AI & Startup Incubation Hub',
-  description: 'Join Prompt Techies, a DPIIT-recognized startup empowering students with AI education, hackathons, internships, and startup incubation to build real-world products.',
-  keywords: ['Prompt Techies', 'AI Startup India', 'Student Startup', 'Startup Incubation', 'AI Learning Platform', 'Hackathons', 'Internships', 'Career Acceleration', 'DPIIT recognized'],
+  title: 'Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company',
+  description: 'Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.',
+  keywords: ['Prompt Techies', 'AI Workshops', 'Hackathons', 'Software Development', 'Startup Incubation', 'Student Innovation', 'AI Education', 'DPIIT recognized'],
+  alternates: {
+    canonical: baseUrl,
+  }
 };
 
 export default function Home() {
+  const webpageSchema = generateWebPageSchema(
+    "Prompt Techies Homepage",
+    "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
+    ""
+  );
+
   return (
     <main className="flex min-h-screen flex-col w-full">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(saahilSchema) }}
       />
       <Hero />
       <CoverflowCarousel />

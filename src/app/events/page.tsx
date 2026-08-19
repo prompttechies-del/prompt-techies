@@ -4,16 +4,57 @@ import Link from 'next/link';
 import Image from 'next/image';
 import EventsVideo from '@/components/EventsVideo';
 
+import { baseUrl, generateEventSchema, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+
 export const metadata: Metadata = {
   title: 'Events & Summits | Prompt Techies Bootcamps',
   description: 'Stay updated on upcoming Prompt Techies events, technical bootcamps, and national leadership summits. Join our flagship Summer Bootcamp 2026.',
+  alternates: {
+    canonical: `${baseUrl}/events`,
+  },
+  openGraph: {
+    title: 'Events & Summits | Prompt Techies Bootcamps',
+    description: 'Stay updated on upcoming Prompt Techies events, technical bootcamps, and national leadership summits.',
+    url: `${baseUrl}/events`,
+    images: [`${baseUrl}/prompt_techies_bootcamp.png`],
+  }
 };
 
-
-
 export default function EventsPage() {
+  const eventSchema = generateEventSchema(
+    "Prompt Techies Innovation Summit 2026",
+    "A high-impact technology and innovation experience bringing together ambitious students, builders, founders, and industry experts.",
+    "2026-06-01T09:00:00+05:30",
+    "2026-07-31T18:00:00+05:30",
+    "Hyderabad",
+    "/events",
+    `${baseUrl}/prompt_techies_bootcamp.png`
+  );
+
+  const webpageSchema = generateWebPageSchema(
+    "Events & Summits | Prompt Techies",
+    "Stay updated on upcoming Prompt Techies events, technical bootcamps, and national leadership summits.",
+    "/events"
+  );
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", item: "" },
+    { name: "Events", item: "/events" }
+  ]);
   return (
     <main className="flex-1 bg-[#0a0a0a]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         <EventsVideo />

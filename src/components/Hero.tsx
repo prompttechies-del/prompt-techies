@@ -15,8 +15,8 @@ export default function Hero() {
         <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.1em] mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)] opacity-0 animate-fade-in-up">
           Welcome to Prompt Techies
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] mb-6 tracking-tight text-white opacity-0 animate-fade-in-up animation-delay-100">
-          Intelligent AI Products & <br className="hidden md:inline" />
+        <h1 className="flex flex-col items-center justify-center text-3xl md:text-5xl lg:text-7xl font-normal leading-[1.1] mb-6 tracking-tight text-white opacity-0 animate-fade-in-up animation-delay-100">
+          <span>Built for developers</span>
           <span className="relative inline-block mt-2 md:mt-0 font-bold md:whitespace-nowrap">
             <span className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent">
               Software Solutions

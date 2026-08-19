@@ -3,14 +3,38 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import InstitutionalVideo from "@/components/InstitutionalVideo";
 
+import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+
 export const metadata: Metadata = {
   title: 'Universities / Institutions | Prompt Techies Academic Partnerships',
   description: 'Empower your educational institution with Prompt Techies. Integrate career events, manage student participation, and access exclusive industry resources.',
+  alternates: {
+    canonical: `${baseUrl}/institutions`,
+  },
 };
 
 export default function InstitutionsPage() {
+  const webpageSchema = generateWebPageSchema(
+    "Universities / Institutions | Prompt Techies Academic Partnerships",
+    "Empower your educational institution with Prompt Techies. Integrate career events, manage student participation, and access exclusive industry resources.",
+    "/institutions"
+  );
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", item: "" },
+    { name: "Institutions", item: "/institutions" }
+  ]);
+
   return (
     <main className="flex-1 bg-[#0a0a0a]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         <InstitutionalVideo />
 
