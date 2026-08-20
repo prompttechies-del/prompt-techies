@@ -1,13 +1,42 @@
 import Image from 'next/image';
-import Lightning from './Lightning';
+import LightTunnel from './LightTunnel';
 
 export default function Hero() {
   return (
     <section className="relative w-full pt-20 md:pt-28 pb-10 flex flex-col items-center bg-[#121212] overflow-hidden">
 
-      {/* Lightning Background */}
+      {/* LightTunnel Background */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-        <Lightning hue={220} xOffset={0} speed={1} intensity={1} size={1} />
+        <LightTunnel
+          cableColor="#00c8ff"
+          pulseColor="#004bff"
+          tunnelColor="#001eff"
+          tunnelOpacity={0.1}
+          speed={0.1}
+          flowDirection="outward"
+          pulseSpeed={2}
+          pulseLength={0.28}
+          pulseBlend={1}
+          pulseWidth={1}
+          cableCount={20}
+          thickness={0.35}
+          rimWidth={0.15}
+          waviness={0.3}
+          sway={0.5}
+          size={1.0}
+          centerX={0.0}
+          centerY={0.0}
+          glow={1.0}
+          fadeNear={0.5}
+          fadeFar={2}
+          brightness={1.0}
+          colorVariance={true}
+          grain={true}
+          grainIntensity={0.05}
+          opacity={1.0}
+          mouseInteraction={true}
+          mouseStrength={0.1}
+        />
       </div>
 
       {/* Hero Content */}
