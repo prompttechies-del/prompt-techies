@@ -71,15 +71,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={`
-                rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
+                rounded-full text-[8px] sm:text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
                 ${scrolled 
-                  ? 'px-3 py-1.5 sm:px-4 sm:py-2' 
-                  : 'px-4 py-2 sm:px-5 sm:py-2.5'
+                  ? 'px-2.5 py-1 sm:px-4 sm:py-2' 
+                  : 'px-3 py-1.5 sm:px-5 sm:py-2.5'
                 }
               `}
             >
-              <span className="hidden sm:inline">Connect with Our Team</span>
-              <span className="sm:hidden">Connect</span>
+              <span>Get in Touch</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
