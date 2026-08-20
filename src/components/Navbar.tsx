@@ -41,7 +41,7 @@ export default function Navbar() {
           }
         `}
       >
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-shrink-0">
           <Link href="/" className="flex items-center gap-3 pointer-events-auto transition-transform hover:scale-105">
             <img 
               src="/logo.jpg" 
@@ -49,37 +49,37 @@ export default function Navbar() {
               className={`transition-all duration-500 rounded-lg ${scrolled ? 'h-5 md:h-7' : 'h-7 md:h-9'}`}
               style={{ filter: 'none' }}
             />
-            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} hidden lg:block xl:hidden 2xl:block`}>
+            <span className={`premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,200,255,0.6)] drop-shadow-[0_0_2px_rgba(0,75,255,0.8)] transition-all duration-500 uppercase ${scrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-xs'} block xl:hidden 2xl:block whitespace-nowrap`}>
               PROMPT TECHIES
             </span>
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 xl:gap-4">
-          <div className="hidden xl:flex items-center gap-3 text-[11px] xl:text-[12px] font-semibold text-[#00c8ff]">
+        <div className="flex items-center gap-2 xl:gap-4 flex-shrink-0">
+          <div className="hidden xl:flex items-center gap-3 text-[11px] xl:text-[12px] font-semibold text-[#ffe07d]">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="hover:text-white transition-all whitespace-nowrap opacity-85 hover:opacity-100 drop-shadow-[0_0_2px_rgba(0,200,255,0.2)]">
+              <Link key={link.name} href={link.href} className="hover:text-white transition-all whitespace-nowrap opacity-85 hover:opacity-100 drop-shadow-[0_0_2px_rgba(255,224,125,0.2)]">
                 {link.name}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 lg:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
 
             <Link 
               href="https://www.instagram.com/prompt_techies" 
               target="_blank"
               rel="noopener noreferrer"
               className={`
-                rounded-full text-[8px] lg:text-[10px] font-bold uppercase tracking-normal lg:tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
+                rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-all whitespace-nowrap bg-[#004bff] text-white hover:bg-[#003cb3] shadow-md shadow-[#004bff]/20
                 ${scrolled 
-                  ? 'px-2 py-1 lg:px-4 lg:py-2' 
-                  : 'px-2.5 py-1.5 lg:px-5 lg:py-2.5'
+                  ? 'px-3 py-1.5 sm:px-4 sm:py-2' 
+                  : 'px-4 py-2 sm:px-5 sm:py-2.5'
                 }
               `}
             >
-              <span className="hidden lg:inline">Get in Touch</span>
-              <span className="lg:hidden">Get in Touch</span>
+              <span className="hidden sm:inline">Connect with Our Team</span>
+              <span className="sm:hidden">Connect</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
@@ -105,7 +105,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-[#00c8ff] hover:text-white opacity-85 hover:opacity-100 transition-all border-b border-white/5 pb-4"
+                className="text-lg font-medium text-[#ffe07d] hover:text-white opacity-85 hover:opacity-100 transition-all border-b border-white/5 pb-4"
               >
                 {link.name}
               </Link>
