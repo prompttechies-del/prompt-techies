@@ -6,16 +6,16 @@ export default function Hero() {
     <section className="relative w-full pt-20 md:pt-28 pb-10 flex flex-col items-center bg-[#121212] overflow-hidden">
 
       {/* LightTunnel Background */}
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
+      <div className="absolute inset-0 z-0 opacity-90 pointer-events-none">
         <LightTunnel
           cableColor="#00c8ff"
-          pulseColor="#00e5ff"
-          tunnelColor="#0034ff"
+          pulseColor="#004bff"
+          tunnelColor="#002b80"
           tunnelOpacity={0.05}
           speed={0.15}
           flowDirection="outward"
           pulseSpeed={2.5}
-          pulseLength={0.35}
+          pulseLength={0.32}
           pulseBlend={1}
           pulseWidth={1}
           cableCount={24}
@@ -26,10 +26,10 @@ export default function Hero() {
           size={1.1}
           centerX={0.0}
           centerY={0.0}
-          glow={1.5}
+          glow={1.8}
           fadeNear={0.3}
           fadeFar={2.2}
-          brightness={1.3}
+          brightness={1.4}
           colorVariance={true}
           grain={true}
           grainIntensity={0.04}
