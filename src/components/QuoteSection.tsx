@@ -196,24 +196,16 @@ export default function QuoteSection() {
               alt="" 
               className="w-12 h-12 rounded-2xl object-cover shadow-lg border border-[#333]" 
             />
-            <h3 className="text-[#DEDBC8] text-xl md:text-2xl font-medium leading-tight tracking-tight">MindEase.AI. <span className="text-gray-500 font-serif italic">(03)</span></h3>
+            <h3 className="text-[#DEDBC8] text-xl md:text-2xl font-medium leading-tight tracking-tight">PromptX AI. <span className="text-gray-500 font-serif italic">(03)</span></h3>
             <ul className="flex flex-col gap-3">
               <li className="flex gap-3 items-start text-sm text-[#E1E0CC]/70">
                 <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#00c8ff]" />
-                <span>A safe space to check in with yourself</span>
-              </li>
-              <li className="flex gap-3 items-start text-sm text-[#E1E0CC]/70">
-                <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#00c8ff]" />
-                <span>Quick mood insights and mindful resets</span>
-              </li>
-              <li className="flex gap-3 items-start text-sm text-[#E1E0CC]/70">
-                <Check className="w-4 h-4 mt-0.5 shrink-0 text-[#00c8ff]" />
-                <span>Small steps toward a healthier mindset</span>
+                <span>Discover people who inspire your next chapter.</span>
               </li>
             </ul>
-            <a href="https://mindeaseai-nu.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 font-medium text-sm transition-all hover:opacity-80">
+            <a href="https://promptx-ai.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 font-medium text-sm transition-all hover:opacity-80">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
-                🫶💙 Recharge Your Mind
+                🫶💙 Meet with your Radheemma
               </span>
               <ArrowRight className="w-4 h-4 text-[#00c8ff] transition-transform group-hover:translate-x-1" />
             </a>
