@@ -78,7 +78,7 @@ export default function Navbar() {
                 }
               `}
             >
-              <span>Get in Touch</span>
+              <span>Get Started</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
