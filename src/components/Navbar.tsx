@@ -67,7 +67,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-4">
 
             <Link 
-              href="https://www.instagram.com/prompt_techies" 
+              href="https://prompttechiesevents.vercel.app/" 
               target="_blank"
               rel="noopener noreferrer"
               className={`
