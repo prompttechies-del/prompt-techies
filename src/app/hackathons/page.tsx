@@ -1,14 +1,13 @@
-import { Metadata } from 'next';
 import Footer from "@/components/Footer";
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import { buildMetadata } from '@/lib/seo';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Hackathons & Challenges | Prompt Techies',
   description: 'Participate in national and global hackathons hosted by Prompt Techies. Build solutions, win prizes, and accelerate your tech career.',
-  alternates: {
-    canonical: `${baseUrl}/hackathons`,
-  },
-};
+  path: '/hackathons',
+  noindex: true,
+});
 
 export default function HackathonsPage() {
   const webpageSchema = generateWebPageSchema(
@@ -23,7 +22,7 @@ export default function HackathonsPage() {
   ]);
 
   return (
-    <main className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
+    <main id="main" className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
@@ -32,7 +31,7 @@ export default function HackathonsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="relative pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <section className="relative pt-44 md:pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h1 className="text-4xl lg:text-6xl font-bold mb-6">Tech <span className="text-[#004bff]">Hackathons</span></h1>
         <p className="text-xl text-gray-400 max-w-2xl">Page content coming soon.</p>
       </section>

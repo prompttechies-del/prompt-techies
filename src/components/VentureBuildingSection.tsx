@@ -11,7 +11,7 @@ export default function VentureBuildingSection() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-[#004bff]/10 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 max-w-4xl">
-          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#00c8ff] mb-6 inline-block bg-[#00c8ff]/10 border border-[#00c8ff]/20 px-4 py-1.5 rounded-full">
+          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00c8ff] mb-6 inline-block bg-[#00c8ff]/10 border border-[#00c8ff]/20 px-4 py-1.5 rounded-full">
             Venture-Building Platform
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
@@ -75,7 +75,7 @@ export default function VentureBuildingSection() {
       <section className="w-full bg-[#121212] py-24 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[10px] mb-4">What Do We Do?</h3>
+            <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[11px] mb-4">What Do We Do?</h3>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">From Idea to Impact.</h2>
             <p className="text-lg text-white/60 mt-6 max-w-2xl mx-auto">
               We help students, innovators, and early-stage founders turn ambitious ideas into working products through a structured, execution-first ecosystem.
@@ -148,7 +148,7 @@ export default function VentureBuildingSection() {
       <section className="w-full py-24 px-6 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[10px] mb-4">What do builders get?</h3>
+            <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[11px] mb-4">What do builders get?</h3>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">More Than Advice.</h2>
             <h2 className="text-2xl md:text-4xl text-white/80 mb-6">An Ecosystem Built For Execution.</h2>
             <p className="text-lg text-white/60 max-w-2xl">
@@ -258,7 +258,7 @@ export default function VentureBuildingSection() {
           
           <div className="text-center p-8 md:p-12 bg-white/5 border border-white/10 rounded-[40px] max-w-4xl mx-auto backdrop-blur-md">
             <p className="text-2xl md:text-4xl font-light italic text-white/90">
-              "We focus on building outcomes, not collecting ideas."
+              &ldquo;We focus on building outcomes, not collecting ideas.&rdquo;
             </p>
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function VentureBuildingSection() {
       {/* 8. Our Initiatives & Vision */}
       <section className="w-full py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[10px] mb-4">Our Initiatives</h3>
+          <h3 className="text-[#00c8ff] font-bold tracking-widest uppercase text-[11px] mb-4">Our Initiatives</h3>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">One Ecosystem.</h2>
           <h2 className="text-2xl md:text-4xl text-white/80 mb-8">Multiple Pathways to Build.</h2>
           

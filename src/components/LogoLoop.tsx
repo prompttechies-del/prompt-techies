@@ -1,14 +1,45 @@
-// @ts-nocheck
+/* eslint-disable @next/next/no-img-element, react-hooks/exhaustive-deps -- generic library hook with caller-supplied dependency list */
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, memo, type ReactNode, type RefObject, type CSSProperties } from 'react';
 import './LogoLoop.css';
+
+type LogoItem = {
+  node?: ReactNode;
+  src?: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  title?: string;
+  href?: string;
+  ariaLabel?: string;
+};
+
+interface LogoLoopProps {
+  logos?: LogoItem[];
+  speed?: number;
+  direction?: 'left' | 'right' | 'up' | 'down';
+  logoHeight?: number;
+  gap?: number;
+  hoverSpeed?: number;
+  scaleOnHover?: boolean;
+  fadeOut?: boolean;
+  fadeOutColor?: string;
+  className?: string;
+  style?: CSSProperties;
+  width?: number | string;
+  ariaLabel?: string;
+  renderItem?: (item: LogoItem, key: string) => ReactNode;
+  pauseOnHover?: boolean;
+}
 
 const ANIMATION_CONFIG = { SMOOTH_TAU: 0.25, MIN_COPIES: 2, COPY_HEADROOM: 2 };
 
-const toCssLength = value => (typeof value === 'number' ? `${value}px` : (value ?? undefined));
+const toCssLength = (value?: number | string) => (typeof value === 'number' ? `${value}px` : (value ?? undefined));
 
-const useResizeObserver = (callback, elements, dependencies) => {
+const useResizeObserver = (callback: () => void, elements: RefObject<Element | null>[], dependencies: unknown[]) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
       const handleResize = () => callback();
@@ -29,9 +60,9 @@ const useResizeObserver = (callback, elements, dependencies) => {
   }, [callback, ...elements, ...dependencies]);
 };
 
-const useImageLoader = (seqRef, onLoad, dependencies) => {
+const useImageLoader = (seqRef: RefObject<HTMLElement | null>, onLoad: () => void, dependencies: unknown[]) => {
   useEffect(() => {
-    const images = seqRef.current?.querySelectorAll('img') ?? [];
+    const images = Array.from(seqRef.current?.querySelectorAll('img') ?? []);
     if (images.length === 0) {
       onLoad();
       return;
@@ -59,9 +90,17 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
   }, [onLoad, seqRef, ...dependencies]);
 };
 
-const useAnimationLoop = (trackRef, targetVelocity, seqWidth, seqHeight, isHovered, hoverSpeed, isVertical) => {
-  const rafRef = useRef(null);
-  const lastTimestampRef = useRef(null);
+const useAnimationLoop = (
+  trackRef: RefObject<HTMLDivElement | null>,
+  targetVelocity: number,
+  seqWidth: number,
+  seqHeight: number,
+  isHovered: boolean,
+  hoverSpeed: number | undefined,
+  isVertical: boolean
+) => {
+  const rafRef = useRef<number | null>(null);
+  const lastTimestampRef = useRef<number | null>(null);
   const offsetRef = useRef(0);
   const velocityRef = useRef(0);
 
@@ -79,12 +118,12 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, seqHeight, isHover
       track.style.transform = transformValue;
     }
 
-    const animate = timestamp => {
+    const animate = (timestamp: number) => {
       if (lastTimestampRef.current === null) {
         lastTimestampRef.current = timestamp;
       }
 
-      const deltaTime = Math.max(0, timestamp - lastTimestampRef.current) / 1000;
+      const deltaTime = Math.max(0, timestamp - (lastTimestampRef.current ?? timestamp)) / 1000;
       lastTimestampRef.current = timestamp;
 
       const target = isHovered && hoverSpeed !== undefined ? hoverSpeed : targetVelocity;
@@ -135,10 +174,10 @@ export const LogoLoop = memo(
     ariaLabel = 'Technology logos loop',
     renderItem,
     pauseOnHover
-  }: any) => {
-    const containerRef = useRef(null);
-    const trackRef = useRef(null);
-    const seqRef = useRef(null);
+  }: LogoLoopProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const seqRef = useRef<HTMLUListElement>(null);
 
     const [seqWidth, setSeqWidth] = useState(0);
     const [seqHeight, setSeqHeight] = useState(0);
@@ -228,7 +267,7 @@ export const LogoLoop = memo(
     }, [effectiveHoverSpeed]);
 
     const renderLogoItem = useCallback(
-      (item, key) => {
+      (item: LogoItem, key: string) => {
         if (renderItem) {
           return (
             <li className="logoloop__item" key={key} role="listitem">
@@ -288,7 +327,7 @@ export const LogoLoop = memo(
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
-            {logos.map((item, itemIndex) => renderLogoItem(item, `${copyIndex}-${itemIndex}`))}
+            {logos.map((item: LogoItem, itemIndex: number) => renderLogoItem(item, `${copyIndex}-${itemIndex}`))}
           </ul>
         )),
       [copyCount, logos, renderLogoItem]

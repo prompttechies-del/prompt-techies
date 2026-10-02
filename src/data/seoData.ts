@@ -6,8 +6,8 @@ export const organizationSchema = {
   "name": "Prompt Techies",
   "legalName": "TROVO FI PRIVATE LIMITED",
   "url": baseUrl,
-  "logo": `${baseUrl}/hero.png`,
-  "image": `${baseUrl}/hero.png`,
+  "logo": `${baseUrl}/logo.jpg`,
+  "image": `${baseUrl}/og-image.jpg`,
   "description": "Prompt Techies is an AI-first technology company focused on building intelligent software, AI-powered products, automation solutions, developer platforms, and innovation-driven digital experiences.",
   "foundingLocation": "India",
   "award": ["DPIIT Recognized Startup", "MSME Registered Company"],
@@ -19,7 +19,7 @@ export const organizationSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "contact@prompttechies.in",
+    "email": "prompttechies@gmail.com",
     "availableLanguage": ["English"]
   },
   "founder": [
@@ -40,12 +40,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Prompt Techies",
-  "url": baseUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${baseUrl}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
+  "url": baseUrl
 };
 
 export const localBusinessSchema = {
@@ -53,16 +48,16 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   "name": "Prompt Techies",
   "legalName": "TROVO FI PRIVATE LIMITED",
-  "image": `${baseUrl}/hero.png`,
+  "image": `${baseUrl}/og-image.jpg`,
   "url": baseUrl,
-  "telephone": "",
+  "telephone": "+91-8008087702",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "",
+    "streetAddress": "Flat No. 304, Plot No. 155 & 156, Sai Lakshmi Residency, IDPL Colony, Bachupally",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
-    "postalCode": "",
+    "postalCode": "500090",
     "addressCountry": "IN"
   }
 };
@@ -239,7 +234,7 @@ export const generateArticleSchema = (headline: string, description: string, ima
     "name": "Prompt Techies",
     "logo": {
       "@type": "ImageObject",
-      "url": `${baseUrl}/hero.png`
+      "url": `${baseUrl}/og-image.jpg`
     }
   },
   "mainEntityOfPage": {

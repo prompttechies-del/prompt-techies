@@ -1,3 +1,4 @@
+import LazyVideo from '@/components/LazyVideo';
 import Link from 'next/link';
 
 export default function UpdateSection() {
@@ -6,7 +7,7 @@ export default function UpdateSection() {
       <div className="w-full max-w-[1600px] bg-gradient-to-br from-[#0c0c0e] via-[#121216] to-[#0a0a0c] border border-white/10 rounded-[32px] md:rounded-[48px] p-8 md:p-12 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 shadow-2xl shadow-black/50">
         
         {/* Background Video Animation */}
-        <video 
+        <LazyVideo 
           autoPlay 
           loop 
           muted 
@@ -26,7 +27,7 @@ export default function UpdateSection() {
         {/* Left Column - Hero Statement & Action */}
         <div className="flex-1 flex flex-col items-start justify-center relative z-10 gap-6 lg:max-w-2xl">
           {/* Gen-Z Neon Badge */}
-          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(245,175,25,0.08)]">
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(245,175,25,0.08)]">
             <span className="w-2 h-2 rounded-full bg-[#f5af19] animate-pulse" />
             Join the movement
           </div>
@@ -81,7 +82,7 @@ export default function UpdateSection() {
             </div>
             <div>
               <h4 className="text-white font-bold text-base mb-1">Pro Mentorship</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">Connect with devs and leaders from Google, Meta, and the world's most disruptive startups to fast-track your growth.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">Connect with devs and leaders from Google, Meta, and the world&apos;s most disruptive startups to fast-track your growth.</p>
             </div>
           </div>
 

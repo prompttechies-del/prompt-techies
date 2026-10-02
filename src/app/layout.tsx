@@ -39,6 +39,7 @@ const inter = Inter({
 
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
+import Analytics from "@/components/Analytics";
 
 import { organizationSchema, websiteSchema, baseUrl } from "@/data/seoData";
 
@@ -47,7 +48,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: {
     default: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
-    template: "%s | Prompt Techies",
+    template: "%s",
   },
   description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
   metadataBase: new URL(baseUrl),
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "Prompt Techies",
     images: [
       {
-        url: `${baseUrl}/hero.png`,
+        url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Prompt Techies AI & Software Innovation Company",
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
     description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
-    images: [`${baseUrl}/hero.png`],
+    images: [`${baseUrl}/og-image.jpg`],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
@@ -92,12 +93,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: "/icon-192x192.png",
   },
   manifest: "/manifest.json",
-  alternates: {
-    canonical: baseUrl,
-  },
 };
 
 export const viewport: Viewport = {
@@ -159,6 +157,7 @@ export default function RootLayout({
                 __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
+                  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
                   gtag('js', new Date());
                   gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
                 `,
@@ -207,9 +206,11 @@ export default function RootLayout({
         )}
       </head>
       <body className="flex flex-col" suppressHydrationWarning>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-4 focus:py-2 focus:rounded-full focus:bg-white focus:text-black">Skip to content</a>
         <SmoothScroll>
           <Navbar />
           {children}
+          <Analytics />
         </SmoothScroll>
       </body>
     </html>

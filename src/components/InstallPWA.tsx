@@ -3,16 +3,19 @@
 import { useState, useEffect } from 'react';
 import { Download, CheckCircle2 } from 'lucide-react';
 
+type BeforeInstallPromptEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
+
+const isStandalone = () =>
+  typeof window !== 'undefined' &&
+  (window.matchMedia('(display-mode: standalone)').matches ||
+    !!(window.navigator as Navigator & { standalone?: boolean }).standalone);
+
 export default function InstallPWA({ scrolled }: { scrolled?: boolean }) {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const [isInstalled, setIsInstalled] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [installedFlag, setInstalledFlag] = useState(false);
+  const isInstalled = installedFlag || isStandalone();
 
   useEffect(() => {
-    // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone) {
-      setIsInstalled(true);
-    }
-
     // Register Service Worker immediately
     if ('serviceWorker' in navigator) {
       const registerSW = () => {
@@ -31,13 +34,13 @@ export default function InstallPWA({ scrolled }: { scrolled?: boolean }) {
     // Listen for the PWA install prompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e);
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
     const handleAppInstalled = () => {
-      setIsInstalled(true);
+      setInstalledFlag(true);
       setDeferredPrompt(null);
     };
 
@@ -59,12 +62,12 @@ export default function InstallPWA({ scrolled }: { scrolled?: boolean }) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome === 'accepted') {
-        setIsInstalled(true);
+        setInstalledFlag(true);
       }
       setDeferredPrompt(null);
     } else {
       // Fallback instructions for unsupported browsers or iOS Safari
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream;
       if (isIOS) {
         alert("To install Prompt Techies on iPhone/iPad:\n\n1. Tap the Share button at the bottom of Safari (square with an up arrow)\n2. Scroll down and tap 'Add to Home Screen'\n3. Tap 'Add'");
       } else {
@@ -79,7 +82,7 @@ export default function InstallPWA({ scrolled }: { scrolled?: boolean }) {
       className={`
         flex items-center gap-2 rounded-full font-bold uppercase tracking-wider transition-all whitespace-nowrap 
         bg-[#004bff] text-white hover:bg-[#003cb3] border border-transparent shadow-md shadow-[#004bff]/20 cursor-pointer active:scale-95
-        ${scrolled ? 'px-3 py-1.5 text-[10px]' : 'px-4 py-2 text-[10px]'}
+        ${scrolled ? 'px-3 py-1.5 text-[11px]' : 'px-4 py-2 text-[11px]'}
       `}
     >
       {isInstalled ? (

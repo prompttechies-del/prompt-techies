@@ -1,7 +1,8 @@
+import LazyVideo from '@/components/LazyVideo';
 export default function AboutHeroVideo() {
   return (
     <div className="absolute inset-0 z-0">
-      <video
+      <LazyVideo
         src="/background-video.mp4"
         autoPlay
         loop

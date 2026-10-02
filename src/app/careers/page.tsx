@@ -1,14 +1,13 @@
-import { Metadata } from 'next';
 import Footer from "@/components/Footer";
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import { buildMetadata } from '@/lib/seo';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Careers | Join Prompt Techies',
   description: 'Join Prompt Techies and help us build the next generation of tech innovators. Explore open roles in AI, engineering, and marketing.',
-  alternates: {
-    canonical: `${baseUrl}/careers`,
-  },
-};
+  path: '/careers',
+  noindex: true,
+});
 
 export default function CareersPage() {
   const webpageSchema = generateWebPageSchema(
@@ -23,7 +22,7 @@ export default function CareersPage() {
   ]);
 
   return (
-    <main className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
+    <main id="main" className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
@@ -32,7 +31,7 @@ export default function CareersPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="relative pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <section className="relative pt-44 md:pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h1 className="text-4xl lg:text-6xl font-bold mb-6">Join <span className="text-[#004bff]">Our Team</span></h1>
         <p className="text-xl text-gray-400 max-w-2xl">Page content coming soon.</p>
       </section>

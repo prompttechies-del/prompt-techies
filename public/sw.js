@@ -1,5 +1,6 @@
-// A simple service worker to satisfy PWA installation requirements.
-self.addEventListener('install', (e) => {
+// Minimal service worker so the site is installable as a PWA.
+// It never intercepts requests, so pages and assets always come straight from the network.
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
@@ -7,8 +8,6 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', (e) => {
-  // Pass-through fetch (no caching). This simply satisfies Chrome's requirement
-  // that a fetch handler exists to trigger the "Add to Home Screen" prompt.
-  e.respondWith(fetch(e.request).catch(() => new Response('Offline')));
+self.addEventListener('fetch', () => {
+  // Intentionally empty: a registered fetch handler satisfies Chrome's install criteria.
 });
