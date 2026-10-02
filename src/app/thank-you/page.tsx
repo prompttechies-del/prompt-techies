@@ -15,7 +15,7 @@ export default function ThankYouPage() {
   return (
     <main id="main" className="relative flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
       <Breadcrumbs items={[{ name: 'Thank You' }]} />
-      <section className="flex flex-1 flex-col items-center justify-center px-6 pt-48 md:pt-40 pb-24 text-center">
+      <section className="flex flex-1 flex-col items-center justify-center px-6 pt-40 pb-24 text-center">
         <div aria-hidden="true" className="flex h-16 w-16 items-center justify-center rounded-full border border-[#00c8ff]/40 bg-[#00c8ff]/10 text-3xl text-[#00c8ff]">
           ✓
         </div>

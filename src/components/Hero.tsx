@@ -3,7 +3,7 @@ import LightTunnel from './LightTunnel';
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-32 md:pt-28 pb-10 flex flex-col items-center bg-[#121212] overflow-hidden">
+    <section className="relative w-full pt-20 md:pt-28 pb-10 flex flex-col items-center bg-[#121212] overflow-hidden">
 
       {/* LightTunnel Background */}
       <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">

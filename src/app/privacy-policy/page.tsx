@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Breadcrumbs items={[{ name: 'Privacy Policy' }]} />
 
-      <article className="mx-auto w-full max-w-3xl px-6 pt-48 md:pt-40 pb-24">
+      <article className="mx-auto w-full max-w-3xl px-6 pt-40 pb-24">
         <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
           Privacy <span className="text-[#004bff]">Policy</span>
         </h1>

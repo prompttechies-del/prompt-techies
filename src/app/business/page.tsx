@@ -38,7 +38,7 @@ export default function BusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative pt-44 md:pt-32 pb-20 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+      <section className="relative pt-32 pb-20 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         <Breadcrumbs items={[{ name: 'Corporate Partnerships' }]} />
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
