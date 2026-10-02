@@ -13,7 +13,7 @@ export const generalFaqs: FaqItem[] = [
   },
   {
     q: 'How do I register or get started?',
-    a: 'Use the Register Now or Get Started buttons on the site, or contact us directly. For events, follow our Instagram page, where announcements are posted first.',
+    a: 'Use the Get Started button on the site, or contact us directly. For events, follow our Instagram page, where announcements are posted first.',
   },
   {
     q: 'Can my college or institution partner with Prompt Techies?',

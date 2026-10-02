@@ -121,7 +121,7 @@ export default function Navbar() {
           </ul>
 
           <Link
-            href="https://prompttechiesevents.vercel.app/"
+            href="https://events.prompttechies.in/"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex rounded-full bg-[#004bff] px-4 py-2 md:px-5 md:py-2.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-md shadow-[#004bff]/20 transition-all hover:bg-[#003cb3] whitespace-nowrap"
@@ -197,7 +197,7 @@ export default function Navbar() {
                 Call Us
               </a>
               <Link
-                href="https://prompttechiesevents.vercel.app/"
+                href="https://events.prompttechies.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}

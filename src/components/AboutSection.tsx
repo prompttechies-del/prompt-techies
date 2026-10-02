@@ -31,7 +31,7 @@ export default function AboutSection() {
             </Link>
 
             <Link 
-              href="https://www.instagram.com/prompt_techies" 
+              href="https://events.prompttechies.in/" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-[#004bff] text-white rounded-full text-sm font-bold hover:bg-[#003cb3] transition-all shadow-md shadow-[#004bff]/20 whitespace-nowrap"

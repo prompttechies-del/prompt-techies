@@ -58,7 +58,7 @@ export default function InstitutionsPage() {
           </div>
           <div className="flex items-center gap-4 opacity-0 animate-fade-in-up animation-delay-300">
             <Link 
-              href="https://www.instagram.com/prompt_techies" 
+              href="https://events.prompttechies.in/" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#004bff] text-white rounded-full font-bold text-sm hover:bg-[#003cb3] transition-all shadow-lg"
