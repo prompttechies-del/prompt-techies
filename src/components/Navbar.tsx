@@ -54,7 +54,7 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href || pathname === `${href}/`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center gap-2 pt-3 md:pt-4 px-3 md:px-12 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 md:pt-4 px-3 md:px-12 pointer-events-none">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -65,8 +65,6 @@ export default function Navbar() {
         @media (max-width: 767px) {
           .premium-logo-font { letter-spacing: 0.16em !important; }
         }
-        .pt-scrollrow { scrollbar-width: none; -ms-overflow-style: none; }
-        .pt-scrollrow::-webkit-scrollbar { display: none; }
       `,
         }}
       />
@@ -146,28 +144,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Always-visible link row for phones and tablets */}
-      <ul
-        aria-label="Primary"
-        className="pt-scrollrow xl:hidden pointer-events-auto flex w-full max-w-6xl gap-2 overflow-x-auto px-1 pb-1"
-      >
-        {navLinks.map((link) => (
-          <li key={link.href} className="shrink-0">
-            <Link
-              href={link.href}
-              aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`flex min-h-10 items-center whitespace-nowrap rounded-full border px-4 text-xs font-semibold backdrop-blur-md transition-colors ${
-                isActive(link.href)
-                  ? 'border-[#00c8ff]/60 bg-[#004bff] text-white'
-                  : 'border-white/10 bg-[#0a0a0a]/75 text-[#ffe07d] active:bg-white/10'
-              }`}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
       {/* Mobile menu */}
       {menuOpen && (
         <>
@@ -183,6 +159,23 @@ export default function Navbar() {
             className="xl:hidden pointer-events-auto absolute top-[3.75rem] left-3 right-3 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-[#0a0a0a]/95 p-3 shadow-2xl backdrop-blur-lg"
           >
             <ul className="flex flex-col">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={closeMenu}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
+                    className={`flex min-h-12 items-center rounded-2xl px-4 text-base font-medium transition-colors active:bg-white/10 ${
+                      isActive(link.href) ? 'bg-white/5 text-white' : 'text-[#ffe07d]'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <ul className="mt-2 flex flex-col border-t border-white/10 pt-2">
               {moreLinks.map((link) => (
                 <li key={link.href}>
                   <Link

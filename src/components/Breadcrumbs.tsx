@@ -6,7 +6,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="absolute top-32 md:top-24 left-0 right-0 z-20 px-6 pointer-events-none"
+      className="absolute top-20 md:top-24 left-0 right-0 z-20 px-6 pointer-events-none"
     >
       <ol className="mx-auto flex w-full max-w-[1200px] flex-wrap items-center gap-2 text-xs text-white/60 pointer-events-auto">
         <li>

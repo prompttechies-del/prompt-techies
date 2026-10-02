@@ -52,7 +52,7 @@ export default function EventsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative pt-44 md:pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+      <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         <Breadcrumbs items={[{ name: 'Events' }]} />
         <EventsVideo />
 

@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Breadcrumbs items={[{ name: 'Case Studies' }]} />
 
-      <section className="px-6 pt-48 md:pt-40 pb-16 text-center">
+      <section className="px-6 pt-40 pb-16 text-center">
         <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
           Case <span className="text-[#004bff]">Studies</span>
         </h1>

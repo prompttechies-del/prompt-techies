@@ -31,7 +31,7 @@ export default function HackathonsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="relative pt-44 md:pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <section className="relative pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h1 className="text-4xl lg:text-6xl font-bold mb-6">Tech <span className="text-[#004bff]">Hackathons</span></h1>
         <p className="text-xl text-gray-400 max-w-2xl">Page content coming soon.</p>
       </section>

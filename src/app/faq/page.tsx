@@ -25,7 +25,7 @@ export default function FaqPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Breadcrumbs items={[{ name: 'FAQs' }]} />
-      <section className="px-6 pt-48 md:pt-40 pb-12 text-center">
+      <section className="px-6 pt-40 pb-12 text-center">
         <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
           Frequently Asked <span className="text-[#004bff]">Questions</span>
         </h1>

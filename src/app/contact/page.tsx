@@ -36,7 +36,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative pt-44 md:pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
+      <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
         <Breadcrumbs items={[{ name: 'Contact' }]} />
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">
           <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">

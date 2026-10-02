@@ -25,7 +25,7 @@ export default function TermsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Breadcrumbs items={[{ name: 'Terms of Service' }]} />
 
-      <article className="mx-auto w-full max-w-3xl px-6 pt-48 md:pt-40 pb-24">
+      <article className="mx-auto w-full max-w-3xl px-6 pt-40 pb-24">
         <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
           Terms of <span className="text-[#004bff]">Service</span>
         </h1>

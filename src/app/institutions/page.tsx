@@ -37,7 +37,7 @@ export default function InstitutionsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="relative pt-44 md:pt-32 pb-24 px-6 overflow-hidden bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
         <Breadcrumbs items={[{ name: 'Institutions' }]} />
         <InstitutionalVideo />
 
