@@ -1,25 +1,20 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import AboutHeroVideo from '@/components/AboutHeroVideo';
 import StoryHoverText from '@/components/StoryHoverText';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedLinks from '@/components/RelatedLinks';
+import TeamSection from '@/components/TeamSection';
 import Footer from "@/components/Footer";
-import { allPeopleSchemas, baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import {allPeopleSchemas, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'About Prompt Techies | Our Mission, Vision & DPIIT Recognition',
   description: 'Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
+  path: '/about',
   keywords: ['Prompt Techies Founder', 'Saahil Zameer Shaik', 'DPIIT-recognized Startup', 'Student Innovation Ecosystem', 'Technology Community'],
-  alternates: {
-    canonical: `${baseUrl}/about`,
-  },
-  openGraph: {
-    title: 'About Prompt Techies | Our Mission, Vision & DPIIT Recognition',
-    description: 'Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
-    url: `${baseUrl}/about`,
-    images: [`${baseUrl}/hero.png`],
-  }
-};
+});
 
 export default function AboutPage() {
   const webpageSchema = generateWebPageSchema(
@@ -34,7 +29,7 @@ export default function AboutPage() {
   ]);
 
   return (
-    <main className="flex-1 bg-[#0a0a0a]">
+    <main id="main" className="flex-1 bg-[#0a0a0a]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(allPeopleSchemas) }}
@@ -48,11 +43,12 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+      <section className="relative pt-44 md:pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+        <Breadcrumbs items={[{ name: 'About Us' }]} />
         <AboutHeroVideo />
         
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)] opacity-0 animate-fade-in-up">
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)] opacity-0 animate-fade-in-up">
             Our Foundation
           </div>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight opacity-0 animate-fade-in-up animation-delay-100">
@@ -66,6 +62,10 @@ export default function AboutPage() {
               We bridge the gap between academic learning and real-world opportunities by connecting students with practical skills, industry mentorship, live projects, hackathons, internships, startup exposure, and collaborative technology communities.
             </p>
           </div>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 opacity-0 animate-fade-in-up animation-delay-300">
+            <Link href="/contact" data-track="hero_cta_click" className="px-8 py-4 bg-gradient-to-r from-[#00c8ff] to-[#004bff] text-white rounded-full font-bold text-sm uppercase tracking-wider text-center">Get in Touch</Link>
+            <Link href="/programs" className="px-8 py-4 border border-white/20 text-white rounded-full font-bold text-sm uppercase tracking-wider text-center hover:bg-white/5">Explore Programs</Link>
+          </div>
         </div>
       </section>
 
@@ -74,12 +74,14 @@ export default function AboutPage() {
         <StoryHoverText />
       </section>
 
+      <TeamSection />
+
       {/* Our Story Section */}
       <section className="py-24 px-6 flex justify-center bg-[#121212] border-b border-white/5">
         <div className="w-full max-w-[1200px]">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#004bff] mb-4">Our Story</div>
+              <div className="text-[11px] font-bold uppercase tracking-widest text-[#004bff] mb-4">Our Story</div>
               <h2 className="text-4xl font-bold text-white tracking-tight mb-6">How It All Started</h2>
               <div className="text-lg text-gray-400 leading-relaxed space-y-4">
                 <p>
@@ -113,7 +115,7 @@ export default function AboutPage() {
         <div className="w-full max-w-4xl mx-auto">
           <div className="flex flex-col gap-16">
             <div className="flex flex-col gap-6">
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#004bff] mb-[-1rem]">Prompt Techies Innovation Hub</div>
+              <div className="text-[11px] font-bold uppercase tracking-widest text-[#004bff] mb-[-1rem]">Prompt Techies Innovation Hub</div>
               <h2 className="text-4xl font-bold text-white tracking-tight decoration-[#004bff] decoration-4 underline underline-offset-8">Our Vision for Student Innovation</h2>
               <div className="text-lg text-gray-400 leading-relaxed font-normal space-y-4">
                 <p>
@@ -153,7 +155,7 @@ export default function AboutPage() {
       <section className="py-24 px-6 flex justify-center bg-[#0a0a0a]">
         <div className="w-full max-w-[1200px]">
           <div className="text-center mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#004bff] bg-[#004bff]/5 border border-[#004bff]/20 px-4 py-2 rounded-full">Our Values</span>
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#004bff] bg-[#004bff]/5 border border-[#004bff]/20 px-4 py-2 rounded-full">Our Values</span>
             <h2 className="text-4xl font-bold text-white tracking-tight mt-6">The Pillars of Prompt Techies</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +182,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-24 px-6 flex justify-center bg-[#121212] border-t border-white/5">
         <div className="w-full max-w-[800px] text-center flex flex-col items-center gap-8">
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[#004bff]">PROMPT TECHIES</div>
+          <div className="text-[11px] font-bold uppercase tracking-widest text-[#004bff]">PROMPT TECHIES</div>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
             Don’t Just Graduate.<br/>
             <span className="text-[#004bff]">Build Something That Matters.</span>
@@ -191,6 +193,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <RelatedLinks links={[
+        { title: 'Innovation Programs', desc: 'See how we take ideas from discovery to launch.', href: '/programs' },
+        { title: 'Events & Workshops', desc: 'Hackathons, bootcamps, and the Innovation Summit.', href: '/events' },
+        { title: 'Campus Chapters', desc: 'Bring Prompt Techies to your institution.', href: '/institutions' },
+      ]} />
       <Footer />
     </main>
   );

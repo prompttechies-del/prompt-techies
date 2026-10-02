@@ -1,7 +1,8 @@
 'use client';
+import LazyVideo from '@/components/LazyVideo';
 
-import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { useIsMobile } from '@/lib/useClient';
 import { motion, useInView } from 'framer-motion';
 import { Users, BookOpen, Layers, Award } from 'lucide-react';
 
@@ -30,47 +31,8 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
-const WordsPullUpMultiStyle = ({ segments = [] }: { segments: { text: string; className: string }[] }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const allWords: { word: string; className: string }[] = [];
-  segments.forEach((segment) => {
-    const words = segment.text.split(' ');
-    words.forEach((word) => {
-      if (word.trim() !== '') {
-        allWords.push({ word, className: segment.className });
-      }
-    });
-  });
-
-  return (
-    <div ref={ref} className="flex flex-wrap justify-center text-center gap-y-2">
-      {allWords.map((item, index) => (
-        <motion.span
-          key={index}
-          initial={{ y: 20, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: index * 0.05,
-            ease: [0.16, 1, 0.3, 1] as const,
-          }}
-          className={`inline-block mx-1.5 ${item.className}`}
-        >
-          {item.word}
-        </motion.span>
-      ))}
-    </div>
-  );
-};
-
 export default function ImpactSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
+  const isMobile = useIsMobile();
 
   const cardAnimation = (index: number) => ({
     initial: isMobile ? { y: 15, opacity: 0 } : { scale: 0.95, opacity: 0 },
@@ -145,7 +107,7 @@ export default function ImpactSection() {
         transition={{ duration: isMobile ? 0.8 : 1.6, ease: [0.16, 1, 0.3, 1] as const }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
-        <video
+        <LazyVideo
           autoPlay
           loop
           muted
@@ -175,7 +137,7 @@ export default function ImpactSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
-            className="liquid-glass rounded-full px-6 py-2 border border-[#ffe07d]/35 text-[#ffe07d] text-[10px] font-semibold mb-8 uppercase tracking-[0.25em] select-none drop-shadow-[0_0_8px_rgba(245,175,25,0.25)]"
+            className="liquid-glass rounded-full px-6 py-2 border border-[#ffe07d]/35 text-[#ffe07d] text-[11px] font-semibold mb-8 uppercase tracking-[0.25em] select-none drop-shadow-[0_0_8px_rgba(245,175,25,0.25)]"
           >
             Prompt Techies Impact
           </motion.div>

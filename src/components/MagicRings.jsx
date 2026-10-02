@@ -96,12 +96,14 @@ export default function MagicRings({
   const isHoveredRef = useRef(false);
   const burstRef = useRef(0);
 
+  useEffect(() => {
   propsRef.current = {
     color, colorTwo, speed, ringCount, attenuation, lineThickness,
     baseRadius, radiusStep, scaleRate, opacity, noiseAmount,
     rotation, ringGap, fadeIn, fadeOut, followMouse, mouseInfluence,
     hoverScale, parallax, clickBurst,
   };
+  });
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -187,9 +189,14 @@ export default function MagicRings({
     mount.addEventListener('mouseleave', onMouseLeave);
     mount.addEventListener('click', onClick);
 
+    let visible = true;
+    const io = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
+    io.observe(mount);
+
     let frameId;
     const animate = (t) => {
       frameId = requestAnimationFrame(animate);
+      if (!visible || document.hidden) return;
       const p = propsRef.current;
 
       smoothMouseRef.current[0] += (mouseRef.current[0] - smoothMouseRef.current[0]) * 0.08;
@@ -228,6 +235,7 @@ export default function MagicRings({
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', resize);
       ro.disconnect();
+      io.disconnect();
       mount.removeEventListener('mousemove', onMouseMove);
       mount.removeEventListener('mouseenter', onMouseEnter);
       mount.removeEventListener('mouseleave', onMouseLeave);

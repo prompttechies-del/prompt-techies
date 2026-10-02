@@ -1,6 +1,7 @@
 "use client";
+import LazyVideo from '@/components/LazyVideo';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import MagicRings from './MagicRings';
@@ -144,7 +145,7 @@ export default function CoverflowCarousel() {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
-                onDragEnd={(e, { offset, velocity }) => {
+                onDragEnd={(e, { offset }) => {
                   const swipe = offset.x;
                   if (swipe < -50) {
                     handleNext();
@@ -162,7 +163,7 @@ export default function CoverflowCarousel() {
                   }`}
                 >
                   {item.video ? (
-                    <video
+                    <LazyVideo
                       src={item.video}
                       autoPlay
                       loop

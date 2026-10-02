@@ -34,7 +34,7 @@ If you cannot edit DNS records, you can verify via HTML Meta Tag. We have alread
 5. Copy the tag provided. It will look something like this:
    `<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />`
 6. Extract **only the code** from the `content` attribute (e.g., `YOUR_VERIFICATION_CODE_HERE`).
-7. In your hosting environment (Vercel, Netlify, etc.), add a new Environment Variable:
+7. In your hosting environment (Cloudflare Workers & Pages → Settings → Variables and Secrets, or a build variable), add a new Environment Variable:
    - **Key**: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
    - **Value**: [Paste the extracted code]
 8. Save the environment variable and trigger a new deployment of the website.

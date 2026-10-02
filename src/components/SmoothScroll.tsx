@@ -1,25 +1,27 @@
 'use client';
 
 import { ReactLenis } from 'lenis/react';
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
+import { useIsClient } from '@/lib/useClient';
 import BackgroundMusic from '@/components/BackgroundMusic';
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useIsClient();
+  const reduceMotion = mounted && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <ReactLenis root options={{ 
-      lerp: 0.06, 
-      duration: 2,
-      smoothWheel: true,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // Premium exponential ease-out
-    }}>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.12, // snappier, less "floaty" than before
+        smoothWheel: !reduceMotion,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.5,
+      }}
+    >
       {children}
       {mounted && <BackgroundMusic />}
+      
     </ReactLenis>
   );
 }

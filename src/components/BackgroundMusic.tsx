@@ -1,64 +1,64 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { useIsClient } from '@/lib/useClient';
 
 const PLAYLIST = [
   {
     id: 0,
-    title: "São Paulo",
-    artist: "The Weeknd",
-    source: "audio.com/hawa-drammeh",
-    url: "/audio/sao-paulo.mp3"
+    title: "Calm Focus",
+    artist: "Prompt Techies",
+    source: "Original ambient loop (royalty-free)",
+    url: "/audio/calm-focus.wav"
   },
   {
     id: 1,
-    title: "Aaya Sher",
-    artist: "Anirudh Ravichander",
-    source: "audio.com/johnpaul-alladi",
-    url: "/audio/aaya-sher.mp3"
+    title: "Night Build",
+    artist: "Prompt Techies",
+    source: "Original ambient loop (royalty-free)",
+    url: "/audio/night-build.wav"
   }
 ];
 
 export default function BackgroundMusic() {
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(() => {
+    const saved = parseInt(localStorage.getItem('bg-music-track') ?? '0', 10);
+    return saved >= 0 && saved < PLAYLIST.length ? saved : 0;
+  });
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(0.5); // Default 50%
+  const [isMuted, setIsMuted] = useState(() => localStorage.getItem('bg-music-muted') === 'true');
+  const [volume, setVolume] = useState(() => {
+    const saved = parseFloat(localStorage.getItem('bg-music-volume') ?? '');
+    return Number.isFinite(saved) ? saved : 0.5; // Default 50%
+  });
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(286); // Fallback to 4:46
   const [isExpanded, setIsExpanded] = useState(false); // Collapsed by default
   const [showTooltip, setShowTooltip] = useState(true); // Bouncing reminder tooltip
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useIsClient();
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressBarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setIsMounted(true);
-    
     // Load persisted state if exists
     const savedPlayState = localStorage.getItem('bg-music-playing');
     const savedMuteState = localStorage.getItem('bg-music-muted');
     const savedVolumeState = localStorage.getItem('bg-music-volume');
-    const savedTrackIndex = localStorage.getItem('bg-music-track');
     
-    if (savedTrackIndex !== null) {
-      setCurrentTrackIndex(parseInt(savedTrackIndex, 10));
-    }
 
     // Initialize values on the audio element once mounted
     if (audioRef.current) {
       if (savedVolumeState) {
         const parsedVolume = parseFloat(savedVolumeState);
         audioRef.current.volume = parsedVolume;
-        setVolume(parsedVolume);
       } else {
         audioRef.current.volume = 0.5;
       }
 
       if (savedMuteState === 'true') {
         audioRef.current.muted = true;
-        setIsMuted(true);
       }
     }
 
@@ -111,6 +111,7 @@ export default function BackgroundMusic() {
       window.removeEventListener('touchstart', handleFirstInteraction);
       clearTimeout(tooltipTimer);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- mount-only setup
   }, []);
 
   // Update volume
@@ -209,6 +210,7 @@ export default function BackgroundMusic() {
         audioRef.current.play().catch(e => console.log('Play interrupted:', e));
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- reload only when the track changes
   }, [currentTrackIndex]);
 
   if (!isMounted) return null;
@@ -226,7 +228,7 @@ export default function BackgroundMusic() {
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
-        onError={(e) => {
+        onError={() => {
           console.warn("Audio playback issue. The file might be missing or unsupported:", currentTrack.url);
           setIsPlaying(false);
         }}
@@ -274,7 +276,7 @@ export default function BackgroundMusic() {
               <div className="flex items-center gap-2">
                 {/* Glowing status circle */}
                 <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${isPlaying ? 'bg-[#00c8ff] shadow-[0_0_8px_#00c8ff]' : 'bg-neutral-500'}`} />
-                <span className="text-[10px] uppercase tracking-wider font-bold text-neutral-400">Background Music</span>
+                <span className="text-[11px] uppercase tracking-wider font-bold text-neutral-400">Background Music</span>
               </div>
               <button 
                 onClick={() => setIsExpanded(false)}
@@ -292,7 +294,7 @@ export default function BackgroundMusic() {
             <div className="flex items-center gap-4">
               {/* Spinning Prompt Techies Logo */}
               <div className="relative w-14 h-14 rounded-full flex-shrink-0 bg-neutral-900 border border-[#00c8ff]/30 flex items-center justify-center shadow-lg shadow-[#00c8ff]/10 group overflow-hidden">
-                <img 
+                <Image width={56} height={56} 
                   src="/logo.jpg" 
                   alt="Prompt Techies Logo" 
                   className={`w-full h-full rounded-full object-cover transition-transform duration-1000 ${isPlaying ? 'animate-spin' : ''}`}
@@ -338,7 +340,7 @@ export default function BackgroundMusic() {
                   style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
                 />
               </div>
-              <div className="flex justify-between items-center text-[10px] font-mono text-neutral-400">
+              <div className="flex justify-between items-center text-[11px] font-mono text-neutral-400">
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(duration)}</span>
               </div>

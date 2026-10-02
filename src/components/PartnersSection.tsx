@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- remote/third-party logos not covered by next/image remotePatterns */
 'use client';
 
 import React from 'react';
@@ -28,8 +29,8 @@ export default function PartnersSection() {
   return (
     <section className="w-full bg-[#0a0a0a] py-14 flex flex-col items-center overflow-hidden border-y border-white/5">
       <div className="w-full max-w-4xl text-center mb-8 px-6">
-        <h2 className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em] bg-gradient-to-r from-[#ffe07d] via-[#f5af19] to-[#e65c00] bg-clip-text text-transparent font-mono">
-          Mentors from Leading Global Companies
+        <h2 className="text-[11px] md:text-[11px] font-black uppercase tracking-[0.25em] bg-gradient-to-r from-[#ffe07d] via-[#f5af19] to-[#e65c00] bg-clip-text text-transparent font-mono">
+          Mentorship from Top Tech Professionals
         </h2>
       </div>
 

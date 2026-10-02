@@ -1,3 +1,4 @@
+import LazyVideo from '@/components/LazyVideo';
 import Link from 'next/link';
 
 export default function AboutSection() {
@@ -6,7 +7,7 @@ export default function AboutSection() {
       <div className="w-full max-w-[1600px] bg-[#121212] rounded-[32px] md:rounded-[48px] overflow-hidden flex flex-col lg:flex-row items-center p-8 md:p-12 lg:px-20 lg:py-6 gap-10 lg:gap-12 border border-white/5 shadow-2xl shadow-black/30">
         {/* Left Content */}
         <div className="flex-1 flex flex-col items-start text-white">
-          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1 rounded-full text-[10px] font-semibold mb-8 uppercase tracking-wider inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-4 py-1 rounded-full text-[11px] font-semibold mb-8 uppercase tracking-wider inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
             Our Mission
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight text-white">
@@ -15,8 +16,11 @@ export default function AboutSection() {
           <div className="flex items-center gap-2 mb-6 bg-gradient-to-r from-[#ffe07d] to-[#f5af19] bg-clip-text text-transparent font-black tracking-[0.15em] text-xs uppercase">
             Dream. Develop. Deploy. ⚡
           </div>
+          <p className="text-base font-normal text-gray-400 leading-relaxed mb-4 max-w-xl">
+            Prompt Techies is an AI-first technology company that transforms ambitious ideas into scalable digital products, intelligent software, and enterprise-grade AI solutions. We empower founders, startups, and businesses to build faster, innovate smarter, and create lasting impact through cutting-edge technology.
+          </p>
           <p className="text-base font-normal text-gray-400 leading-relaxed mb-10 max-w-xl">
-            As a DPIIT-recognized AI technology company, we engineer intelligent solutions that transform industries. We build scalable software, developer tools, and enterprise AI platforms that accelerate innovation for startups and businesses worldwide.
+            From concept to launch, we help you design, develop, and scale products that shape the future.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link 
@@ -39,7 +43,7 @@ export default function AboutSection() {
 
         {/* Right Video Animation */}
         <div className="flex-1 w-full aspect-[4/3] relative rounded-[16px] overflow-hidden group border border-white/10 shadow-2xl">
-          <video 
+          <LazyVideo 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
             muted 
             autoPlay 

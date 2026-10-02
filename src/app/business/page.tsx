@@ -1,21 +1,19 @@
-import { Metadata } from 'next';
+import LazyVideo from '@/components/LazyVideo';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { buildMetadata } from '@/lib/seo';
+import Faq from '@/components/Faq';
+import RelatedLinks from '@/components/RelatedLinks';
+import { businessFaqs } from '@/data/faqs';
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Corporate AI Growth Solutions | Partner with Prompt Techies',
   description: 'Accelerate AI adoption through Prompt Techies innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.',
-  alternates: {
-    canonical: `${baseUrl}/business`,
-  },
-  openGraph: {
-    title: 'Corporate AI Growth Solutions | Partner with Prompt Techies',
-    description: 'Accelerate AI adoption through Prompt Techies innovation ecosystem.',
-    url: `${baseUrl}/business`,
-    images: [`${baseUrl}/hero.png`],
-  }
-};
+  path: '/business',
+});
 
 export default function BusinessPage() {
   const webpageSchema = generateWebPageSchema(
@@ -30,7 +28,7 @@ export default function BusinessPage() {
   ]);
 
   return (
-    <main className="flex-1 bg-[#0a0a0a]">
+    <main id="main" className="flex-1 bg-[#0a0a0a]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
@@ -40,10 +38,11 @@ export default function BusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+      <section className="relative pt-44 md:pt-32 pb-20 px-6 bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+        <Breadcrumbs items={[{ name: 'Corporate Partnerships' }]} />
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <video
+          <LazyVideo
             src="/corp.mp4"
             autoPlay
             loop
@@ -60,8 +59,12 @@ export default function BusinessPage() {
             Corporate <span className="text-[#004bff] italic">AI Growth</span> Solutions.
           </h1>
           <p className="text-base lg:text-xl text-gray-400 max-w-2xl leading-relaxed opacity-0 animate-fade-in-up animation-delay-100">
-            Accelerate AI adoption through Prompt Techies' innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.
+            Accelerate AI adoption through Prompt Techies&apos; innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 opacity-0 animate-fade-in-up animation-delay-300">
+            <Link href="/contact" data-track="hero_cta_click" className="px-8 py-4 bg-gradient-to-r from-[#00c8ff] to-[#004bff] text-white rounded-full font-bold text-sm uppercase tracking-wider text-center">Become a Corporate Partner</Link>
+            <Link href="/events" className="px-8 py-4 border border-white/20 text-white rounded-full font-bold text-sm uppercase tracking-wider text-center hover:bg-white/5">See Our Events</Link>
+          </div>
         </div>
       </section>
 
@@ -140,16 +143,22 @@ export default function BusinessPage() {
             Grow your AI product, reach technical audiences, build developer communities, and connect with the future of AI innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-gradient-to-br from-[#004bff] to-[#002e99] text-white rounded-full font-bold text-sm uppercase tracking-widest shadow-xl hover:scale-105 transition-transform shadow-[#004bff]/20 border border-white/10">
+            <Link href="/contact" className="px-8 py-4 bg-gradient-to-br from-[#004bff] to-[#002e99] text-white rounded-full font-bold text-sm uppercase tracking-widest shadow-xl hover:scale-105 transition-transform shadow-[#004bff]/20 border border-white/10">
               Become a Corporate Partner
-            </button>
-            <button className="px-8 py-4 bg-transparent border border-[#004bff] text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#004bff]/10 transition-colors">
+            </Link>
+            <Link href="/contact" className="px-8 py-4 bg-transparent border border-[#004bff] text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#004bff]/10 transition-colors">
               Launch Your AI Ecosystem
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
+      <Faq items={businessFaqs} />
+      <RelatedLinks links={[
+        { title: 'Events & Workshops', desc: 'See the events partners can sponsor.', href: '/events' },
+        { title: 'Campus Chapters', desc: 'Reach students through university partnerships.', href: '/institutions' },
+        { title: 'About Prompt Techies', desc: 'Meet the team behind the ecosystem.', href: '/about' },
+      ]} />
       <Footer />
     </main>
   );
