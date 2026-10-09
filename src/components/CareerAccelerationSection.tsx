@@ -1,8 +1,8 @@
 'use client';
 
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { Rocket, Trophy, Cpu, Briefcase, Users, Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
-import { MouseEvent, useState } from 'react';
+import { Trophy, Cpu, Briefcase, Users, Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
+import { MouseEvent } from 'react';
 import Link from 'next/link';
 
 // Features Data
@@ -43,7 +43,6 @@ const features = [
 function GlowCard({ feature, index }: { feature: typeof features[0], index: number }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
@@ -58,8 +57,6 @@ function GlowCard({ feature, index }: { feature: typeof features[0], index: numb
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="group relative flex flex-col p-8 rounded-[24px] bg-[#0a0a0a] border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2"
     >
       {/* Dynamic Background Glow */}
@@ -146,7 +143,7 @@ export default function CareerAccelerationSection() {
           >
             Build Fast.<br />
             Scale Smart.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] to-[#004bff]">Engineer What's Next.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] to-[#004bff]">Engineer What&apos;s Next.</span>
           </motion.h2>
 
           <motion.p 
@@ -189,7 +186,7 @@ export default function CareerAccelerationSection() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
               <Link 
-                href="/programs" 
+                href="/about" 
                 className="group relative flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#00c8ff] to-[#004bff] text-white rounded-full font-bold text-[15px] overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,200,255,0.3)]"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
@@ -198,10 +195,10 @@ export default function CareerAccelerationSection() {
               </Link>
               
               <Link 
-                href="/about" 
+                href="/programs" 
                 className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-white/20 rounded-full font-bold text-[15px] transition-all hover:bg-white/5 hover:border-white/40"
               >
-                <span>Explore Programs</span>
+                <span>About Us</span>
               </Link>
             </div>
           </div>

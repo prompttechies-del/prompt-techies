@@ -1,17 +1,19 @@
-import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { buildMetadata } from '@/lib/seo';
+import Faq from '@/components/Faq';
+import RelatedLinks from '@/components/RelatedLinks';
+import { institutionsFaqs } from '@/data/faqs';
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import InstitutionalVideo from "@/components/InstitutionalVideo";
 
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Universities / Institutions | Prompt Techies Academic Partnerships',
   description: 'Empower your educational institution with Prompt Techies. Integrate career events, manage student participation, and access exclusive industry resources.',
-  alternates: {
-    canonical: `${baseUrl}/institutions`,
-  },
-};
+  path: '/institutions',
+});
 
 export default function InstitutionsPage() {
   const webpageSchema = generateWebPageSchema(
@@ -26,7 +28,7 @@ export default function InstitutionsPage() {
   ]);
 
   return (
-    <main className="flex-1 bg-[#0a0a0a]">
+    <main id="main" className="flex-1 bg-[#0a0a0a]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
@@ -36,10 +38,11 @@ export default function InstitutionsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-[#121212] border-b border-white/5 min-h-[60vh] flex items-center">
+        <Breadcrumbs items={[{ name: 'Institutions' }]} />
         <InstitutionalVideo />
 
         <div className="relative z-10 w-full max-w-[1200px] mx-auto text-left">
-          <div className="border border-[#004bff]/30 text-[#004bff] bg-[#004bff]/5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block opacity-0 animate-fade-in-up">
+          <div className="border border-[#004bff]/30 text-[#004bff] bg-[#004bff]/5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest mb-6 inline-block opacity-0 animate-fade-in-up">
             Institutional Growth
           </div>
           <h1 className="text-3xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight opacity-0 animate-fade-in-up animation-delay-100">
@@ -50,12 +53,12 @@ export default function InstitutionsPage() {
               Prompt Techies works with universities and institutions to create a powerful ecosystem where students can learn emerging technologies, build real-world projects, participate in innovation challenges, connect with mentors, and access meaningful career and startup opportunities.
             </p>
             <p>
-              We help institutions move beyond traditional learning by creating spaces where students don't just study technology. They build with it.
+              We help institutions move beyond traditional learning by creating spaces where students don&apos;t just study technology. They build with it.
             </p>
           </div>
           <div className="flex items-center gap-4 opacity-0 animate-fade-in-up animation-delay-300">
             <Link 
-              href="https://www.instagram.com/prompt_techies" 
+              href="https://events.prompttechies.in/" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#004bff] text-white rounded-full font-bold text-sm hover:bg-[#003cb3] transition-all shadow-lg"
@@ -90,7 +93,7 @@ export default function InstitutionsPage() {
       <section className="py-24 px-6 bg-[#0a0a0a] flex justify-center border-b border-white/5">
         <div className="w-full max-w-[1200px]">
           <div className="mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#004bff] bg-[#004bff]/5 border border-[#004bff]/20 px-4 py-2 rounded-full">What We Build With Institutions</span>
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#004bff] bg-[#004bff]/5 border border-[#004bff]/20 px-4 py-2 rounded-full">What We Build With Institutions</span>
             <h2 className="text-4xl font-bold text-white tracking-tight mt-6">From Campus Learners to Real-World Builders.</h2>
           </div>
 
@@ -116,7 +119,7 @@ export default function InstitutionsPage() {
       <section className="py-24 px-6 flex justify-center bg-[#0a0a0a]">
         <div className="w-full max-w-[1200px] flex flex-col items-center text-center">
           <div className="mb-12">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#004bff]">Prompt Techies in Action</span>
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#004bff]">Prompt Techies in Action</span>
             <h2 className="text-4xl font-bold text-white tracking-tight mt-6">Ideas Become Projects. Students Become Builders.</h2>
             <p className="text-gray-400 mt-4 max-w-xl mx-auto">Explore our workshops, innovation programs, hackathons, technical initiatives, and institutional collaborations.</p>
           </div>
@@ -135,6 +138,12 @@ export default function InstitutionsPage() {
         </div>
       </section>
 
+      <Faq items={institutionsFaqs} />
+      <RelatedLinks links={[
+        { title: 'Events & Workshops', desc: 'See the experiences we create for students.', href: '/events' },
+        { title: 'Innovation Programs', desc: 'From idea to startup, step by step.', href: '/programs' },
+        { title: 'Contact Us', desc: 'Talk to our team about a campus partnership.', href: '/contact' },
+      ]} />
       <Footer />
     </main>
   );

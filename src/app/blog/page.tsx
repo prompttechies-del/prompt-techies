@@ -1,14 +1,13 @@
-import { Metadata } from 'next';
 import Footer from "@/components/Footer";
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import { buildMetadata } from '@/lib/seo';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Tech Blog & Insights | Prompt Techies',
   description: 'Read the latest insights on Artificial Intelligence, software development, startups, and technology trends from the Prompt Techies team.',
-  alternates: {
-    canonical: `${baseUrl}/blog`,
-  },
-};
+  path: '/blog',
+  noindex: true,
+});
 
 export default function BlogPage() {
   const webpageSchema = generateWebPageSchema(
@@ -23,7 +22,7 @@ export default function BlogPage() {
   ]);
 
   return (
-    <main className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
+    <main id="main" className="flex min-h-screen flex-col w-full bg-[#0a0a0a] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}

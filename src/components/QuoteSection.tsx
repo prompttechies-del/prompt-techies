@@ -1,6 +1,8 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+/* eslint-disable @next/next/no-img-element -- remote/third-party logos not covered by next/image remotePatterns */
+import LazyVideo from '@/components/LazyVideo';
+import { useIsMobile } from '@/lib/useClient';
+import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFramer, SiGithub } from 'react-icons/si';
 import LogoLoop from './LogoLoop';
@@ -16,11 +18,7 @@ const techLogos = [
 ];
 
 export default function QuoteSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
+  const isMobile = useIsMobile();
 
   const cardAnimation = (index: number) => ({
     initial: isMobile ? { y: 15, opacity: 0 } : { scale: 0.95, opacity: 0 },
@@ -65,7 +63,7 @@ export default function QuoteSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
-            className="text-[#D4AF37] text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold mb-8 md:mb-12 drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+            className="text-[#D4AF37] text-[11px] sm:text-xs uppercase tracking-[0.25em] font-bold mb-8 md:mb-12 drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
           >
             Core Philosophy
           </motion.div>
@@ -108,7 +106,7 @@ export default function QuoteSection() {
           
           {/* Card 1 (Image/Video) */}
           <motion.div {...cardAnimation(0)} className="relative rounded-[2rem] overflow-hidden min-h-[380px] md:min-h-[420px] lg:min-h-0 lg:h-full border border-[#212121]">
-            <video 
+            <LazyVideo 
               autoPlay loop muted playsInline preload="none"
               className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform" 
               src={"https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"}
@@ -125,7 +123,7 @@ export default function QuoteSection() {
           <motion.div {...cardAnimation(1)} className="relative rounded-[2rem] overflow-hidden bg-[#151515] p-6 md:p-8 flex flex-col gap-6 min-h-[380px] md:min-h-[420px] lg:min-h-0 lg:h-full border border-[#212121] group transition-all duration-500 hover:border-[#DEDBC8]/30">
             <img 
               src={"https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&w=1280&q=85"} 
-              alt="" 
+              alt="Build Your Hype resume builder icon" 
               className="w-12 h-12 rounded-2xl object-cover shadow-lg border border-[#333]" 
             />
             <h3 className="text-[#DEDBC8] text-xl md:text-2xl font-medium leading-tight tracking-tight">Build Your Hype. <span className="text-gray-500 font-serif italic">(01)</span></h3>
@@ -147,7 +145,7 @@ export default function QuoteSection() {
                 <span>Get instant ATS score insights</span>
               </li>
             </ul>
-            <a href="https://build-your-hype.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 font-medium text-sm transition-all hover:opacity-80">
+            <a href="https://build-your-hype.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 py-3 font-medium text-sm transition-all hover:opacity-80">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
                 💥 Start the Glow-Up
               </span>
@@ -159,7 +157,7 @@ export default function QuoteSection() {
           <motion.div {...cardAnimation(2)} className="relative rounded-[2rem] overflow-hidden bg-[#151515] p-6 md:p-8 flex flex-col gap-6 min-h-[380px] md:min-h-[420px] lg:min-h-0 lg:h-full border border-[#212121] group transition-all duration-500 hover:border-[#DEDBC8]/30">
             <img 
               src={"https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85"} 
-              alt="" 
+              alt="AI Tools Directory icon" 
               className="w-12 h-12 rounded-2xl object-cover shadow-lg border border-[#333]" 
             />
             <h3 className="text-[#DEDBC8] text-xl md:text-2xl font-medium leading-tight tracking-tight">AI Tools Directory. <span className="text-gray-500 font-serif italic">(02)</span></h3>
@@ -181,7 +179,7 @@ export default function QuoteSection() {
                 <span>Hidden gems curated by the community</span>
               </li>
             </ul>
-            <a href="https://techiesai.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 font-medium text-sm transition-all hover:opacity-80">
+            <a href="https://techiesai.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 py-3 font-medium text-sm transition-all hover:opacity-80">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
                 💎 Unlock the Stack
               </span>
@@ -193,7 +191,7 @@ export default function QuoteSection() {
           <motion.div {...cardAnimation(3)} className="relative rounded-[2rem] overflow-hidden bg-[#151515] p-6 md:p-8 flex flex-col gap-6 min-h-[380px] md:min-h-[420px] lg:min-h-0 lg:h-full border border-[#212121] group transition-all duration-500 hover:border-[#DEDBC8]/30">
             <img 
               src={"https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&w=1280&q=85"} 
-              alt="" 
+              alt="PromptX AI icon" 
               className="w-12 h-12 rounded-2xl object-cover shadow-lg border border-[#333]" 
             />
             <h3 className="text-[#DEDBC8] text-xl md:text-2xl font-medium leading-tight tracking-tight">PromptX AI. <span className="text-gray-500 font-serif italic">(03)</span></h3>
@@ -203,7 +201,7 @@ export default function QuoteSection() {
                 <span>Discover people who inspire your next chapter.</span>
               </li>
             </ul>
-            <a href="https://promptx-ai.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 font-medium text-sm transition-all hover:opacity-80">
+            <a href="https://promptx-ai.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 py-3 font-medium text-sm transition-all hover:opacity-80">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff]">
                 🫶💙 Meet with your Radheemma
               </span>

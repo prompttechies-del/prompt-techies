@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Globe, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import InstallPWA from "./InstallPWA";
+import Link from "next/link";
 
 // Custom SVG definitions for social brand icons because lucide-react lacks them
 const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -154,7 +156,7 @@ export default function Footer() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/contact";
+    window.location.href = `mailto:prompttechies@gmail.com?subject=Subscribe&body=Please add me to updates: ${encodeURIComponent(email)}`;
   };
 
   return (
@@ -235,7 +237,7 @@ export default function Footer() {
             className="bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 select-none font-normal pb-2"
             style={{ fontFamily: "var(--font-instrument-serif), serif" }}
           >
-            Dream Bigger. Build Faster. Lead What's Next.
+            Dream Bigger. Build Faster. Lead What&apos;s Next.
           </h2>
 
           {/* Description */}
@@ -258,10 +260,10 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="flex items-center justify-center gap-1.5 px-6 py-2.5 bg-white text-black rounded-full hover:scale-105 hover:bg-neutral-200 transition-all duration-300 cursor-pointer shadow-[0_4px_12px_rgba(255,255,255,0.15)] flex-shrink-0 text-xs font-bold uppercase tracking-wider"
+              className="flex items-center justify-center gap-1.5 px-6 py-3.5 bg-white text-black rounded-full hover:scale-105 hover:bg-neutral-200 transition-all duration-300 cursor-pointer shadow-[0_4px_12px_rgba(255,255,255,0.15)] flex-shrink-0 text-xs font-bold uppercase tracking-wider"
               aria-label="Subscribe"
             >
-              <span>I'm In</span>
+              <span>I&apos;m In</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </form>
@@ -272,7 +274,7 @@ export default function Footer() {
           {/* Column 1 - Brand Info */}
           <div className="flex flex-col gap-6 text-left">
             <div className="flex items-center gap-3">
-              <img
+              <Image width={40} height={40}
                 src="/logo.jpg"
                 alt="Prompt Techies Logo"
                 className="h-10 w-10 rounded-lg shadow-[0_0_15px_rgba(0,75,255,0.15)] border border-white/10"
@@ -287,24 +289,24 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-2 mt-1">
-              <p className="premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-[10px] uppercase leading-[1.8] mb-1">Government Recognitions & Registrations</p>
+              <p className="premium-logo-font font-bold bg-gradient-to-r from-[#00c8ff] via-[#004bff] to-[#00c8ff] bg-clip-text text-transparent text-[11px] uppercase leading-[1.8] mb-1">Government Recognitions & Registrations</p>
               <div className="flex flex-wrap gap-3 mt-2">
                 <div className="flex items-center justify-center bg-white/5 border border-white/10 rounded-xl px-4 py-3 w-fit liquid-glass">
-                  <img 
+                  <Image width={120} height={40} 
                     src="/logo_msme.png" 
                     alt="MSME" 
                     className="h-10 w-auto max-w-none object-contain brightness-100" 
                   />
                 </div>
                 <div className="flex items-center justify-center bg-white/5 border border-white/10 rounded-xl px-4 py-3 w-fit liquid-glass">
-                  <img 
+                  <Image width={120} height={40} 
                     src="/logo_mca.png" 
                     alt="Ministry of Corporate Affairs" 
                     className="h-10 w-auto max-w-none object-contain brightness-100" 
                   />
                 </div>
                 <div className="flex items-center justify-center bg-white/5 border border-white/10 rounded-xl px-4 py-3 w-fit liquid-glass">
-                  <img 
+                  <Image width={120} height={40} 
                     src="/logo_dpiit.png" 
                     alt="DPIIT Startup India" 
                     className="h-10 w-auto max-w-none object-contain brightness-100" 
@@ -317,11 +319,11 @@ export default function Footer() {
           {/* Column 2 - Ecosystem Navigation */}
           <div className="flex flex-col gap-3 text-left">
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] bg-gradient-to-r from-[#00c8ff] to-[#004bff] bg-clip-text text-transparent mb-2 w-fit">Explore</h4>
-            <a href="/about" className="text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Our Story</a>
-            <a href="/programs" className="text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Innovation Programs</a>
-            <a href="/institutions" className="text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Campus Chapters</a>
-            <a href="/events" className="text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Events & Workshops</a>
-            <a href="/business" className="text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Enterprise AI Partnerships</a>
+            <Link href="/case-studies" className="inline-flex min-h-11 items-center text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Case Studies</Link>
+            <Link href="/faq" className="inline-flex min-h-11 items-center text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">FAQs</Link>
+            <Link href="/contact" className="inline-flex min-h-11 items-center text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Contact Us</Link>
+            <Link href="/privacy-policy" className="inline-flex min-h-11 items-center text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Privacy Policy</Link>
+            <Link href="/terms" className="inline-flex min-h-11 items-center text-white/70 hover:text-white transition-colors duration-200 text-sm w-fit">Terms of Service</Link>
 
           </div>
 
@@ -407,7 +409,7 @@ export default function Footer() {
           </div>
 
           {/* Right Tagline */}
-          <div className="flex items-center gap-4 text-[10px] text-white/40 font-mono tracking-wider select-none">
+          <div className="flex items-center gap-4 text-[11px] text-white/40 font-mono tracking-wider select-none">
             <InstallPWA scrolled={true} />
             <span>intelligence &gt; execution</span>
           </div>

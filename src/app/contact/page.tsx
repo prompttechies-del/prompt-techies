@@ -1,21 +1,17 @@
-import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { buildMetadata } from '@/lib/seo';
 import Footer from "@/components/Footer";
+import ContactForm from '@/components/ContactForm';
+import Faq from '@/components/Faq';
+import { generalFaqs } from '@/data/faqs';
 
-import { baseUrl, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
+import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Contact Us | Prompt Techies HQ',
   description: 'Get in touch with the Prompt Techies national portal team. Reach out for collaborations, institutional nodes, or technical support.',
-  alternates: {
-    canonical: `${baseUrl}/contact`,
-  },
-  openGraph: {
-    title: 'Contact Us | Prompt Techies HQ',
-    description: 'Get in touch with the Prompt Techies national portal team.',
-    url: `${baseUrl}/contact`,
-    images: [`${baseUrl}/hero.png`],
-  }
-};
+  path: '/contact',
+});
 
 export default function ContactPage() {
   const webpageSchema = generateWebPageSchema(
@@ -30,7 +26,7 @@ export default function ContactPage() {
   ]);
 
   return (
-    <main className="flex-1 bg-[#0a0a0a] text-white">
+    <main id="main" className="relative flex-1 bg-[#0a0a0a] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
@@ -41,8 +37,9 @@ export default function ContactPage() {
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 bg-[#121212] border-b border-white/5">
+        <Breadcrumbs items={[{ name: 'Contact' }]} />
         <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
+          <div className="border border-[#ffe07d]/35 text-[#ffe07d] bg-[#f5af19]/5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 inline-block shadow-[0_0_15px_rgba(245,175,25,0.08)]">
             Contact Us
           </div>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
@@ -50,6 +47,10 @@ export default function ContactPage() {
           </h1>
           <p className="text-base lg:text-xl text-gray-400 max-w-2xl leading-relaxed">
             Reach out to our national portal team for collaborations, institutional nodes, or support.
+          </p>
+          <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#00c8ff]/30 bg-[#00c8ff]/5 px-4 py-2 text-sm text-[#00c8ff]">
+            <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#00c8ff] animate-pulse" />
+            We respond within 24 hours.
           </p>
         </div>
       </section>
@@ -77,24 +78,36 @@ export default function ContactPage() {
                 Hyderabad, Telangana – 500090.
               </p>
             </div>
+          <div className="flex flex-col gap-4 border-t border-gray-800 pt-8">
+              <div className="w-full h-72 rounded-3xl overflow-hidden border border-gray-800">
+                <iframe
+                  title="Prompt Techies head office on Google Maps"
+                  src="https://www.google.com/maps?q=Sai+Lakshmi+Residency+IDPL+Colony+Bachupally+Hyderabad+500090&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full border-0"
+                />
+              </div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Sai+Lakshmi+Residency+IDPL+Colony+Bachupally+Hyderabad+500090"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-[#00c8ff] hover:text-white transition-colors w-fit"
+              >
+                Get directions &rarr;
+              </a>
+            </div>
           </div>
           
-          <div className="w-full h-[1100px] bg-[#121212] rounded-[32px] overflow-hidden flex justify-center border border-gray-800 shadow-2xl">
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSc4RPfPEvGjolYCNAGJhYGxdC_ktLlA8pu3mqfFFXiYL7qSOQ/viewform?embedded=true" 
-              width="100%" 
-              height="1096" 
-              frameBorder="0" 
-              marginHeight={0} 
-              marginWidth={0}
-              className="w-full filter invert-[0.9] hue-rotate-180"
-            >
-              Loading…
-            </iframe>
+          <div className="w-full self-start bg-[#121212] rounded-[32px] overflow-hidden border border-gray-800 shadow-2xl">
+            <ContactForm />
           </div>
         </div>
       </section>
 
+      <Faq items={generalFaqs.slice(1, 4).concat(generalFaqs[7])} />
       <Footer />
     </main>
   );

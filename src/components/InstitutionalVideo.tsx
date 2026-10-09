@@ -1,7 +1,8 @@
+import LazyVideo from '@/components/LazyVideo';
 export default function InstitutionalVideo() {
   return (
     <div className="absolute inset-0 z-0">
-      <video
+      <LazyVideo
         src="/activation.mp4"
         autoPlay
         loop
