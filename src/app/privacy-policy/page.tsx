@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2>1. Who we are</h2>
             <p>
-              This website is operated by Prompt Techies (TROVO FI PRIVATE LIMITED), {SITE.address.street}, {SITE.address.district}, {SITE.address.city}, {SITE.address.region} – {SITE.address.postalCode}, India. You can reach us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or {SITE.phone}.
+              This website is operated by Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), {SITE.address.street}, {SITE.address.district}, {SITE.address.city}, {SITE.address.region} – {SITE.address.postalCode}, India. You can reach us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or {SITE.phone}.
             </p>
           </section>
 

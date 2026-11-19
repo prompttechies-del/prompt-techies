@@ -10,8 +10,8 @@ import Footer from "@/components/Footer";
 import {allPeopleSchemas, generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
 export const metadata = buildMetadata({
-  title: 'About Prompt Techies | Our Mission, Vision & DPIIT Recognition',
-  description: 'Discover the mission of Prompt Techies. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
+  title: 'About Prompt Techies (PROMPTTECHIES PRIVATE LIMITED) | Mission & Vision',
+  description: 'Discover the mission of Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), Hyderabad. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
   path: '/about',
   keywords: ['Prompt Techies Founder', 'Saahil Zameer Shaik', 'DPIIT-recognized Startup', 'Student Innovation Ecosystem', 'Technology Community'],
 });
@@ -56,7 +56,7 @@ export default function AboutPage() {
           </h1>
           <div className="text-base lg:text-xl text-gray-400 max-w-3xl leading-relaxed space-y-4 opacity-0 animate-fade-in-up animation-delay-200">
             <p>
-              Prompt Techies is a student-focused technology and innovation ecosystem built to transform ambitious learners into skilled builders, innovators, and future founders.
+              Prompt Techies (<strong className="text-white">PROMPTTECHIES PRIVATE LIMITED</strong>) is a student-focused technology and innovation ecosystem built to transform ambitious learners into skilled builders, innovators, and future founders.
             </p>
             <p>
               We bridge the gap between academic learning and real-world opportunities by connecting students with practical skills, industry mentorship, live projects, hackathons, internships, startup exposure, and collaborative technology communities.

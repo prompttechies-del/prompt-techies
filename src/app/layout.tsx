@@ -52,8 +52,11 @@ export const metadata: Metadata = {
   },
   description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
   metadataBase: new URL(baseUrl),
-  keywords: ["Prompt Techies", "AI Technology Company", "AI Workshops", "Software Development", "Hackathons", "SaaS Products", "Developer Platforms", "Enterprise Automation"],
-  authors: [{ name: "Prompt Techies" }],
+  keywords: ["Prompt Techies", "PROMPTTECHIES PRIVATE LIMITED", "Prompt Techies Hyderabad", "AI Technology Company", "AI Workshops", "Software Development", "Hackathons", "SaaS Products", "Developer Platforms", "Enterprise Automation"],
+  authors: [{ name: "Prompt Techies", url: baseUrl }],
+  creator: "PROMPTTECHIES PRIVATE LIMITED",
+  publisher: "PROMPTTECHIES PRIVATE LIMITED",
+  applicationName: "Prompt Techies",
   openGraph: {
     title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
     description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
