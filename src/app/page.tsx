@@ -15,8 +15,8 @@ import Footer from "@/components/Footer";
 import {localBusinessSchema, saahilSchema, generateWebPageSchema } from '@/data/seoData';
 
 export const metadata = buildMetadata({
-  title: 'Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company',
-  description: 'Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), Hyderabad, empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.',
+  title: 'Prompt Techies | AI Workshops, Hackathons & Software',
+  description: 'Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), Hyderabad: AI workshops, hackathons, software development and internships for students and startups.',
   path: '',
   keywords: ['Prompt Techies', 'PROMPTTECHIES PRIVATE LIMITED', 'Prompt Techies Pvt Ltd', 'AI Workshops', 'Hackathons', 'Software Development', 'Startup Incubation', 'Student Innovation', 'AI Education', 'DPIIT recognized'],
 });

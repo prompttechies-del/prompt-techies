@@ -134,7 +134,7 @@ export default function CareerAccelerationSection() {
             <span className="text-sm font-semibold tracking-wide text-gray-300 uppercase">Product Engineering</span>
           </motion.div>
 
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -144,7 +144,7 @@ export default function CareerAccelerationSection() {
             Build Fast.<br />
             Scale Smart.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8ff] to-[#004bff]">Engineer What&apos;s Next.</span>
-          </motion.h2>
+          </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

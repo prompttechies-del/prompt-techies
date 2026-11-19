@@ -11,7 +11,7 @@ import {allPeopleSchemas, generateWebPageSchema, generateBreadcrumbSchema } from
 
 export const metadata = buildMetadata({
   title: 'About Prompt Techies (PROMPTTECHIES PRIVATE LIMITED) | Mission & Vision',
-  description: 'Discover the mission of Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), Hyderabad. We are a DPIIT-recognized startup dedicated to bridging the gap between academia and industry through AI and innovation.',
+  description: 'Prompt Techies (PROMPTTECHIES PRIVATE LIMITED), Hyderabad, is a DPIIT-recognized startup bridging academia and industry through AI and innovation.',
   path: '/about',
   keywords: ['Prompt Techies Founder', 'Saahil Zameer Shaik', 'DPIIT-recognized Startup', 'Student Innovation Ecosystem', 'Technology Community'],
 });
