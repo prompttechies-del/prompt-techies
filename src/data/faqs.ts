@@ -24,8 +24,8 @@ export const generalFaqs: FaqItem[] = [
     a: 'Yes. Companies can co-create hackathons, workshops and developer programs, or reach our student and developer community through campaigns. See the Enterprise AI Partnerships page or send us a message.',
   },
   {
-    q: 'Is Prompt Techies a registered company?',
-    a: 'Prompt Techies operates under TROVO FI PRIVATE LIMITED and is recognised under DPIIT (Startup India) and registered as an MSME. The recognition logos are shown in the website footer.',
+    q: 'What is PROMPTTECHIES PRIVATE LIMITED?',
+    a: 'PROMPTTECHIES PRIVATE LIMITED is the registered company behind Prompt Techies, headquartered in Hyderabad, Telangana. It is recognised under DPIIT (Startup India) and registered as an MSME. The recognition logos are shown in the website footer.',
   },
   {
     q: 'Where are you located?',

@@ -120,7 +120,7 @@ export default function CTASection() {
         </p>
 
         <a 
-          href="https://chat.whatsapp.com/D9eITx9D35RDZupF1zNust"
+          href="https://chat.whatsapp.com/BqEUOHFu7Fb0RlMFSMvg9M"
           target="_blank"
           rel="noopener noreferrer"
           className="animate-fade-rise-delay-2 liquid-glass inline-block rounded-full px-10 py-3.5 text-sm font-black text-[#00f0ff] mt-12 hover:scale-[1.05] transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,200,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.6)] tracking-widest uppercase relative overflow-hidden group"

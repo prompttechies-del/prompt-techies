@@ -285,7 +285,7 @@ export default function Footer() {
             </div>
             
             <p className="text-xs text-white/50 leading-relaxed max-w-xs">
-              Building the AI Infrastructure of Tomorrow. Engineering intelligent technology that empowers businesses, developers, and enterprises.
+              Prompt Techies is a brand of PROMPTTECHIES PRIVATE LIMITED, Hyderabad. Building the AI Infrastructure of Tomorrow. Engineering intelligent technology that empowers businesses, developers, and enterprises.
             </p>
 
             <div className="flex flex-col gap-2 mt-1">
@@ -374,7 +374,7 @@ export default function Footer() {
         <div className="liquid-glass rounded-full px-6 md:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 w-full backdrop-blur-md">
           {/* Left */}
           <div className="text-xs text-white/50 select-none">
-            © 2026 Prompt Techies (TROVO FI PRIVATE LIMITED). All Rights Reserved.
+            © 2026 Prompt Techies (PROMPTTECHIES PRIVATE LIMITED). All Rights Reserved.
           </div>
 
           {/* Center */}

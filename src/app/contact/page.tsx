@@ -8,8 +8,8 @@ import { generalFaqs } from '@/data/faqs';
 import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
 export const metadata = buildMetadata({
-  title: 'Contact Us | Prompt Techies HQ',
-  description: 'Get in touch with the Prompt Techies national portal team. Reach out for collaborations, institutional nodes, or technical support.',
+  title: 'Contact Prompt Techies | PROMPTTECHIES PRIVATE LIMITED, Hyderabad',
+  description: 'Contact PROMPTTECHIES PRIVATE LIMITED (Prompt Techies), Hyderabad. Reach out for collaborations, institutional nodes, or technical support.',
   path: '/contact',
 });
 
@@ -70,7 +70,8 @@ export default function ContactPage() {
             <div className="flex flex-col gap-3 border-t border-gray-800 pt-8">
               <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#004bff]">📍 Head Office</h3>
               <p className="text-lg font-medium text-gray-300 leading-relaxed">
-                <span className="font-bold text-white">Prompt Techies</span><br />
+                <span className="font-bold text-white">PROMPTTECHIES PRIVATE LIMITED</span><br />
+                <span className="text-gray-400">(Prompt Techies)</span><br />
                 Flat No. 304, Plot No. 155 & 156,<br />
                 Sai Lakshmi Residency,<br />
                 IDPL Colony, Beside Reddy’s Factory,<br />

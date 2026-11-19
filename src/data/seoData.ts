@@ -3,9 +3,23 @@ export const baseUrl = 'https://prompttechies.in';
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${baseUrl}/#organization`,
   "name": "Prompt Techies",
-  "legalName": "TROVO FI PRIVATE LIMITED",
+  "alternateName": ["PROMPTTECHIES PRIVATE LIMITED", "Prompt Techies Pvt Ltd", "PromptTechies"],
+  "legalName": "PROMPTTECHIES PRIVATE LIMITED",
   "url": baseUrl,
+  "email": "prompttechies@gmail.com",
+  "telephone": "+91-8008087702",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Flat No. 304, Plot No. 155 & 156, Sai Lakshmi Residency, IDPL Colony, Bachupally",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500090",
+    "addressCountry": "IN"
+  },
+  "areaServed": "IN",
+  "knowsAbout": ["Artificial Intelligence", "AI workshops", "Hackathons", "Software development", "Startup incubation", "Student innovation"],
   "logo": `${baseUrl}/logo.jpg`,
   "image": `${baseUrl}/og-image.jpg`,
   "description": "Prompt Techies is an AI-first technology company focused on building intelligent software, AI-powered products, automation solutions, developer platforms, and innovation-driven digital experiences.",
@@ -20,6 +34,8 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "contactType": "customer service",
     "email": "prompttechies@gmail.com",
+    "telephone": "+91-8008087702",
+    "areaServed": "IN",
     "availableLanguage": ["English"]
   },
   "founder": [
@@ -39,19 +55,26 @@ export const organizationSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${baseUrl}/#website`,
   "name": "Prompt Techies",
-  "url": baseUrl
+  "alternateName": "PROMPTTECHIES PRIVATE LIMITED",
+  "url": baseUrl,
+  "inLanguage": "en-IN",
+  "publisher": { "@id": `${baseUrl}/#organization` }
 };
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${baseUrl}/#localbusiness`,
   "name": "Prompt Techies",
-  "legalName": "TROVO FI PRIVATE LIMITED",
+  "alternateName": "PROMPTTECHIES PRIVATE LIMITED",
+  "legalName": "PROMPTTECHIES PRIVATE LIMITED",
+  "parentOrganization": { "@id": `${baseUrl}/#organization` },
+  "email": "prompttechies@gmail.com",
   "image": `${baseUrl}/og-image.jpg`,
   "url": baseUrl,
   "telephone": "+91-8008087702",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Flat No. 304, Plot No. 155 & 156, Sai Lakshmi Residency, IDPL Colony, Bachupally",
