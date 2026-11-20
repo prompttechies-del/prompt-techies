@@ -47,7 +47,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
+    default: "Prompt Techies | AI Workshops, Hackathons & Software",
     template: "%s",
   },
   description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   publisher: "PROMPTTECHIES PRIVATE LIMITED",
   applicationName: "Prompt Techies",
   openGraph: {
-    title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
+    title: "Prompt Techies | AI Workshops, Hackathons & Software",
     description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
     url: baseUrl,
     siteName: "Prompt Techies",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prompt Techies | AI Workshops, Hackathons, Software Development & Innovation Company",
+    title: "Prompt Techies | AI Workshops, Hackathons & Software",
     description: "Prompt Techies empowers students, startups, and colleges through AI workshops, hackathons, product development, internships, and innovative technology solutions.",
     images: [`${baseUrl}/og-image.jpg`],
   },

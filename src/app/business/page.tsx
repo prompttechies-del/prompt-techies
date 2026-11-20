@@ -11,14 +11,14 @@ import {generateWebPageSchema, generateBreadcrumbSchema } from '@/data/seoData';
 
 export const metadata = buildMetadata({
   title: 'Corporate AI Growth Solutions | Partner with Prompt Techies',
-  description: 'Accelerate AI adoption through Prompt Techies innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.',
+  description: 'Connect your AI products, APIs and platforms with developers, startups, educators and enterprise builders through the Prompt Techies innovation ecosystem.',
   path: '/business',
 });
 
 export default function BusinessPage() {
   const webpageSchema = generateWebPageSchema(
     "Corporate AI Growth Solutions | Partner with Prompt Techies",
-    "Accelerate AI adoption through Prompt Techies innovation ecosystem. Connect your AI products, APIs, and platforms with the next generation of developers, startups, educators, and enterprise builders.",
+    "Connect your AI products, APIs and platforms with developers, startups, educators and enterprise builders through the Prompt Techies innovation ecosystem.",
     "/business"
   );
   
