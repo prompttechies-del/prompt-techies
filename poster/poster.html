@@ -2,66 +2,59 @@
 <style>
 @page{size:1240px 1754px;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{width:1240px;height:1754px;background:#02030a;color:#eef2ff;font-family:Inter,sans-serif;overflow:hidden;position:relative}
-.bg{position:absolute;inset:0;background:
- radial-gradient(700px 520px at 50% 300px,rgba(40,90,255,.55),transparent 70%),
- radial-gradient(500px 400px at 8% 60%,rgba(0,220,200,.18),transparent 70%),
- radial-gradient(600px 500px at 95% 75%,rgba(140,70,255,.22),transparent 70%)}
-.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(120,150,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,150,255,.07) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at 50% 25%,#000 20%,transparent 70%)}
-.rings{position:absolute;left:50%;top:270px;transform:translate(-50%,-50%)}
-.ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%);border:1px solid rgba(120,160,255,.25)}
-.r1{width:470px;height:470px}.r2{width:620px;height:620px;border-style:dashed;border-color:rgba(56,225,198,.25)}.r3{width:780px;height:780px;border-color:rgba(120,160,255,.12)}
-.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#38e1c6;box-shadow:0 0 18px #38e1c6}
-.top{position:absolute;top:44px;left:60px;right:60px;display:flex;justify-content:space-between;font:500 13px 'JetBrains Mono';letter-spacing:.25em;color:#9fb2e0;text-transform:uppercase}
-.pill{border:1px solid rgba(120,160,255,.4);padding:8px 16px;border-radius:99px;background:rgba(30,50,120,.3)}
-.logo{position:absolute;left:50%;top:270px;width:350px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 50px rgba(60,120,255,.8)) drop-shadow(0 0 120px rgba(60,120,255,.4))}
-.hero{position:absolute;top:470px;left:0;right:0;text-align:center}
-h1{font:900 128px/1 'Inter Display',Inter;letter-spacing:-.03em;background:linear-gradient(180deg,#fff 30%,#a9c1ff);-webkit-background-clip:text;color:transparent}
-h1 span{background:linear-gradient(90deg,#4f7bff,#38e1c6);-webkit-background-clip:text;color:transparent}
-.tag{margin-top:14px;font:600 17px 'JetBrains Mono';letter-spacing:.42em;color:#38e1c6}
-.lede{margin:24px auto 0;width:860px;font:400 19px/1.55 Inter;color:#c3cde6}
-.lede b{color:#fff;font-weight:600}
-.cards{position:absolute;top:815px;left:60px;right:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.c{position:relative;padding:18px 18px 16px;border-radius:16px;background:linear-gradient(160deg,rgba(40,60,140,.35),rgba(10,14,35,.6));border:1px solid rgba(120,160,255,.22);overflow:hidden}
-.c::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--g)}
-.b{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font:700 14px 'JetBrains Mono';color:#fff;background:var(--g);box-shadow:0 6px 20px -4px var(--s)}
-.t{margin-top:12px;font:700 16.5px/1.2 Inter;color:#fff}
-.d{margin-top:6px;font:400 12.5px/1.45 Inter;color:#9ba9cc}
-.obj{position:absolute;left:60px;right:60px;bottom:105px;padding:22px 30px;border-radius:18px;background:linear-gradient(90deg,rgba(79,123,255,.25),rgba(56,225,198,.15));border:1px solid rgba(120,180,255,.35);display:flex;gap:28px;align-items:center}
-.obj h3{flex:none;font:800 22px/1.1 'Inter Display',Inter;color:#fff;width:150px}
-.obj h3 small{display:block;font:500 11px 'JetBrains Mono';letter-spacing:.2em;color:#38e1c6;margin-bottom:6px}
-.obj p{font:400 14px/1.55 Inter;color:#dbe3f7}
-.foot{position:absolute;left:60px;right:60px;bottom:40px;display:flex;justify-content:space-between;align-items:center;font:600 14px 'JetBrains Mono';letter-spacing:.3em;color:#8fa2d8;text-transform:uppercase}
-.foot .cta{color:#02030a;background:linear-gradient(90deg,#4f7bff,#38e1c6);padding:12px 24px;border-radius:99px;letter-spacing:.2em;font-weight:700}
+body{width:1240px;height:1754px;background:#05070d;color:#e9edf5;font-family:Inter,sans-serif;overflow:hidden;position:relative}
+.glow{position:absolute;border-radius:50%;filter:blur(90px)}
+.g1{width:720px;height:720px;right:-200px;top:-220px;background:radial-gradient(#3b5bff,transparent 65%);opacity:.55}
+.g2{width:600px;height:600px;left:-260px;top:430px;background:radial-gradient(#00d1b2,transparent 65%);opacity:.25}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:62px 62px}
+.wrap{position:relative;padding:72px 80px}
+.top{display:flex;justify-content:space-between;font:500 14px 'JetBrains Mono';letter-spacing:.2em;color:#8ea0c4;text-transform:uppercase}
+.mark{display:flex;align-items:center;gap:14px;color:#fff}
+.logo{width:46px;height:46px}
+.hero{position:absolute;right:50px;top:130px;width:380px;filter:drop-shadow(0 0 60px rgba(59,91,255,.45))}
+h1{margin-top:110px;font:900 168px/0.86 'Inter Display',Inter;letter-spacing:-.05em}
+h1 span{background:linear-gradient(90deg,#8fa2ff,#38e1c6);-webkit-background-clip:text;color:transparent}
+.sub{margin-top:26px;font:600 22px Inter;letter-spacing:.2em;text-transform:uppercase;color:#9fb0d6}
+.lede{margin-top:40px;max-width:720px;font:300 23px/1.5 Inter;color:#c9d2e6}
+.lede b{font-weight:600;color:#fff}
+.rule{margin:52px 0 34px;height:1px;background:linear-gradient(90deg,#7c93ff,rgba(124,147,255,0))}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 30px}
+.c{border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.n{font:500 12px 'JetBrains Mono';color:#38e1c6;letter-spacing:.1em}
+.t{margin-top:6px;font:700 17px/1.2 Inter;color:#fff}
+.d{margin-top:7px;font:400 13px/1.45 Inter;color:#93a1bf}
+.obj{margin-top:46px;padding:28px 32px;border:1px solid rgba(124,147,255,.35);border-radius:16px;background:rgba(20,28,55,.55);display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start}
+.obj h3{font:500 13px 'JetBrains Mono';letter-spacing:.18em;color:#8fa2ff;text-transform:uppercase;line-height:1.6}
+.obj p{font:400 15.5px/1.55 Inter;color:#d3daea}
+.foot{position:absolute;left:80px;right:80px;bottom:52px;display:flex;justify-content:space-between;font:500 13px 'JetBrains Mono';letter-spacing:.16em;color:#7183a8;text-transform:uppercase}
 </style></head><body>
-<div class="bg"></div><div class="grid"></div>
-<div class="rings"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-<div class="dot" style="left:300px;top:-12px"></div><div class="dot" style="left:-318px;top:60px;background:#7c93ff;box-shadow:0 0 18px #7c93ff"></div><div class="dot" style="left:250px;top:240px;width:7px;height:7px"></div><div class="dot" style="left:-200px;top:-300px;width:7px;height:7px;background:#b48cff;box-shadow:0 0 18px #b48cff"></div></div>
-<div class="top"><span class="pill">Prompt Techies Pvt Ltd</span><span class="pill">AI-First · India &amp; Global</span></div>
-<img class="logo" src="logo-icon.png" alt="">
-<div class="hero">
- <h1>PROMPT <span>TECHIES</span></h1>
- <div class="tag">TECHNOLOGY · SOFTWARE · PRODUCT · INNOVATION</div>
- <p class="lede">An <b>AI-first technology, software engineering, product development and digital innovation enterprise</b> — building software, digital platforms, intelligent systems and technology-enabled business solutions across industries.</p>
+<div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div>
+<div class="wrap">
+ <img class="hero" src="logo-icon.png" alt="">
+ <div class="top"><div class="mark"><img class="logo" src="logo-icon.png" alt="">Prompt Techies Pvt Ltd</div><div>AI-First · India &amp; Global</div></div>
+ <h1>PROMPT<br><span>TECHIES</span></h1>
+ <div class="sub">Technology · Software · Product · Innovation</div>
+ <p class="lede">An <b>AI-first technology, software engineering, product development and digital innovation enterprise</b> — conceptualising, designing, developing, deploying and commercialising software, digital platforms, intelligent systems and technology-enabled business solutions across industries.</p>
+ <div class="rule"></div>
+ <div class="cols">
+  <div class="c"><div class="n">01</div><div class="t">AI &amp; Emerging Tech</div><div class="d">Generative AI, ML, LLMs, AI agents, computer vision, NLP, predictive analytics</div></div>
+  <div class="c"><div class="n">02</div><div class="t">Automation &amp; Robotics</div><div class="d">Workflow automation, RPA, autonomous agents, robotics, smart machines</div></div>
+  <div class="c"><div class="n">03</div><div class="t">Software &amp; Apps</div><div class="d">Mobile, web, desktop &amp; enterprise software, SaaS, marketplaces</div></div>
+  <div class="c"><div class="n">04</div><div class="t">Web &amp; Digital Solutions</div><div class="d">Websites, portals, UI/UX, APIs, system integration, hosting</div></div>
+  <div class="c"><div class="n">05</div><div class="t">FinTech</div><div class="d">Expense management, payment integrations, digital wallets, financial analytics</div></div>
+  <div class="c"><div class="n">06</div><div class="t">EdTech &amp; Institutions</div><div class="d">LMS, digital classrooms, exam &amp; student management, AI learning tools</div></div>
+  <div class="c"><div class="n">07</div><div class="t">HealthTech</div><div class="d">Hospital &amp; clinic management, telehealth, digital health records</div></div>
+  <div class="c"><div class="n">08</div><div class="t">GovTech</div><div class="d">E-governance, citizen-service platforms, public sector digital transformation</div></div>
+  <div class="c"><div class="n">09</div><div class="t">IoT &amp; Embedded</div><div class="d">Connected devices, sensors, embedded systems, industrial IoT</div></div>
+  <div class="c"><div class="n">10</div><div class="t">Logistics &amp; Mobility</div><div class="d">Delivery apps, fleet management, route optimisation, on-demand services</div></div>
+  <div class="c"><div class="n">11</div><div class="t">E-commerce &amp; Retail</div><div class="d">Online marketplaces, retail &amp; inventory software, booking platforms</div></div>
+  <div class="c"><div class="n">12</div><div class="t">Gaming &amp; XR</div><div class="d">Mobile, web &amp; PC games, AR, VR, XR, simulations, immersive experiences</div></div>
+  <div class="c"><div class="n">13</div><div class="t">Cloud, Data &amp; Security</div><div class="d">Cloud infrastructure, databases, data analytics, cybersecurity</div></div>
+  <div class="c"><div class="n">14</div><div class="t">Consulting &amp; IT Services</div><div class="d">IT consulting, digital transformation, managed technology services</div></div>
+  <div class="c"><div class="n">15</div><div class="t">Research &amp; Ventures</div><div class="d">R&amp;D labs, incubation, proprietary products, IP licensing &amp; commercialisation</div></div>
+  <div class="c"><div class="n">16</div><div class="t">Tech Education</div><div class="d">Training, workshops, bootcamps &amp; skill programmes in AI, IoT &amp; robotics</div></div>
+ </div>
+ <div class="obj"><h3>Overall<br>Business<br>Objective</h3><p>To establish, develop and operate a diversified, AI-first technology and innovation enterprise that creates, owns, licenses and commercialises software products, mobile applications, SaaS platforms, AI systems, automation, robotics and IoT products across education, healthcare, fintech, logistics, retail, transportation, entertainment, agriculture, government and other sectors — while providing consulting, product engineering, R&amp;D and IT-enabled services in India and international markets.</p></div>
 </div>
-<div class="cards">
-<div class="c" style="--g:linear-gradient(135deg,#4f7bff,#8a5cff);--s:#4f7bff"><div class="b">01</div><div class="t">AI &amp; Emerging Tech</div><div class="d">Generative AI, ML, LLMs, AI agents, computer vision, NLP</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#00c6ff,#0072ff);--s:#00c6ff"><div class="b">02</div><div class="t">Automation &amp; Robotics</div><div class="d">Workflow automation, RPA, autonomous agents, robotics</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#38e1c6,#00a3ff);--s:#38e1c6"><div class="b">03</div><div class="t">Software &amp; Apps</div><div class="d">Mobile, web, desktop &amp; enterprise software, SaaS</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#8a5cff,#ff5ca8);--s:#8a5cff"><div class="b">04</div><div class="t">Web &amp; Digital</div><div class="d">Websites, portals, UI/UX, APIs, system integration</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#00d68f,#00a3a3);--s:#00d68f"><div class="b">05</div><div class="t">FinTech</div><div class="d">Expense management, payments, digital wallets, analytics</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#ffb84d,#ff6a3d);--s:#ffb84d"><div class="b">06</div><div class="t">EdTech</div><div class="d">LMS, digital classrooms, exam &amp; student management</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#ff5c7a,#ff9a5c);--s:#ff5c7a"><div class="b">07</div><div class="t">HealthTech</div><div class="d">Hospital &amp; clinic software, telehealth, health records</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#4f7bff,#38e1c6);--s:#4f7bff"><div class="b">08</div><div class="t">GovTech</div><div class="d">E-governance, citizen-service platforms, public sector</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#00c6ff,#38e1c6);--s:#00c6ff"><div class="b">09</div><div class="t">IoT &amp; Embedded</div><div class="d">Connected devices, sensors, embedded systems</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#ff9a5c,#ffd25c);--s:#ff9a5c"><div class="b">10</div><div class="t">Logistics &amp; Mobility</div><div class="d">Delivery apps, fleet management, route optimisation</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#ff5ca8,#8a5cff);--s:#ff5ca8"><div class="b">11</div><div class="t">E-commerce &amp; Retail</div><div class="d">Marketplaces, retail &amp; inventory, booking platforms</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#b44dff,#4f7bff);--s:#b44dff"><div class="b">12</div><div class="t">Gaming &amp; XR</div><div class="d">Games, AR, VR, XR, simulations, immersive experiences</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#0072ff,#00c6ff);--s:#0072ff"><div class="b">13</div><div class="t">Cloud, Data &amp; Security</div><div class="d">Cloud infrastructure, data analytics, cybersecurity</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#38e1c6,#00d68f);--s:#38e1c6"><div class="b">14</div><div class="t">Consulting &amp; IT</div><div class="d">IT consulting, digital transformation, managed services</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#8a5cff,#00c6ff);--s:#8a5cff"><div class="b">15</div><div class="t">Research &amp; Ventures</div><div class="d">R&amp;D, incubation, proprietary products, IP licensing</div></div>
-<div class="c" style="--g:linear-gradient(135deg,#ffd25c,#38e1c6);--s:#ffd25c"><div class="b">16</div><div class="t">Tech Education</div><div class="d">Training, workshops &amp; bootcamps in AI, IoT, robotics</div></div>
-</div>
-<div class="obj"><h3><small>OUR MISSION</small>Overall Business Objective</h3><p>To build a diversified, AI-first technology and innovation enterprise that creates, owns, licenses and commercialises software, SaaS platforms, AI systems, automation, robotics and IoT products across education, healthcare, fintech, logistics, retail, entertainment, agriculture, government and more — while providing consulting, product engineering, R&amp;D and IT services in India and international markets.</p></div>
-<div class="foot"><span>Build · Automate · Innovate</span><span class="cta">Prompt Techies Pvt Ltd</span></div>
+<div class="foot"><span>Build · Automate · Innovate</span><span>Prompt Techies Pvt Ltd</span></div>
 </body></html>
